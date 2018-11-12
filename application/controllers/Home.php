@@ -33,20 +33,8 @@ class Home extends MY_Controller
         $data = array();
 
         $data['slide']=$this->load->widget('slide');
-
-        $data['product_cate'] = $this->system_model->get_data('product_category',array('parent_id' => 0,'lang' => $this->language),
-            array('sort'=>''),1,5
-        );
-
-        $data['slide_top'] = $this->f_homemodel->get_data('images',array(
-            'type' => 'left',
-            'lang' => $this->language,
-        ));
-
-        $data['home'] = $this->f_homemodel->getFirstRowWhere('images',array(
-            'type' => 'banner',
-            'lang' => $this->language,
-        ));
+        $data['cat_product_home']=$this->load->widget('cat_product_home');
+        $data['blknews_nb']=$this->load->widget('blknews_nb');
 
         $seo = array();
         $this->LoadHeader($view=null,$seo,true);

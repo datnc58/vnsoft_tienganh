@@ -1,83 +1,45 @@
 <?php foreach ($cate_all as $cate): ?>
-<article class="arc4">
-    <h2 class="heading1">
-        <a href="<?= base_url($cate->alias)?>"><?= $cate->name?></a>
-    </h2>
-    <div class="mgb30"></div>
+<section class="sc_news_home clearfix">
+    <div class="container">
+        <div class="row_pc">
 
+            <h2 class="tit_home2 wow fadeInDownBig"><span><?= $cate->name?></span></h2>
 
-        <?php
-            $total = count($cate->news);
+            <div class="clearfix clearfix-50"></div>
 
-            $count = $total/2;
-            $count = ceil($count);
-        //var_dump($count);die;
-        ?>
-
-
-
-    <?php for ($i=1; $i<=$count; $i++) : ?>
-        <?php if ($i%2 != 0) : ?>
-            <?php $j=0; foreach ($cate->news as $item) : $j++; ?>
-                <?php if ($j <= 2* $i && $j > 2*($i-1)) : ?>
-                    <div class="col-md-6 p0">
-                        <div class="layout-row">
-                            <a href="<?= base_url($item->alias.'.html')?>">
-                                <img src="<?= base_url($item->image)?>">
-                            </a>
-                            <div class="layout-row-ct">
-                                <a href="">
-                                    <h3><?= $item->title?> </h3>
-                                </a>
-                                <p>
-                                    <?= $item->description?>
-                                </p>
-                                <a href="<?= base_url($item->alias.'.html')?>" class="fl-r more"><?= lang('xemct')?> &gt;&gt;</a>
+            <div class="list_news_home clearfix">
+                <div class="row_5">
+                <?php foreach ($cate->news as $item) : ; ?>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="row_10">
+                            <div class="box_news_home wow fadeInUp clearfix">
+                                <figure class="img_news_home"><a href="<?= base_url($item->alias.'.html')?>">
+                                        <img class="w_100" src="<?= base_url($item->image)?>" alt="<?= $item->title?>"/></a></figure>
                                 <div class="clearfix"></div>
+                                <div class="sub_news_home">
+                                    <h3 class="name_news_home">
+                                        <a href="<?= base_url($item->alias.'.html')?>"><?= $item->title?></a>
+                                    </h3>
+                                    <div class="clearfix"></div>
+                                    <a href="<?= base_url($item->alias.'.html')?>" class="view_news_home" title="<?= $item->title?>"><i class="fa fa-angle-double-right"></i>Xem chi tiết<i class="fa fa-angle-double-left"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
-                <?php
-                if ($j == 2*$j) {
-                    break;
-                }
-                ?>
-            <?php endforeach; ?>
-        <?php else : ?>
-            <?php $j=0; foreach ($cate->news as $item) : $j++; ?>
-                <?php if ($j <= 2* $i && $j > 2*($i-1)) : ?>
-                    <div class="col-md-6 p0">
-                        <div class="layout-row-right">
-                            <a href="">
-                                <img src="<?= base_url($item->image)?>">
-                            </a>
-                            <div class="layout-row-ct">
-                                <a href="<?= base_url($item->alias.'.html')?>">
-                                    <h3><?= $item->title?> </h3>
-                                </a>
-                                <p>
-                                    <?= $item->description?>
-                                </p>
-                                <a href="<?= base_url($item->alias.'.html')?>" class="fl-r more"><?= lang('xemct')?> &gt;&gt;</a>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <?php
-                if ($j == 2*$j) {
-                    break;
-                }
-                ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    <?php endfor; ?>
+                <?php endforeach; ?>
+                </div>
+            </div>
 
-</article>
+            <div class="clearfix clearfix-50"></div>
+
+            <div class="text-center">
+                <button class="view_all_news"><i class="fa fa-angle-double-right"></i>Xem nhiều hơn<i class="fa fa-angle-double-left"></i></button>
+            </div>
+
+        </div>
+    </div>
+</section>
 <?php endforeach; ?>
-
-
 
 
 
