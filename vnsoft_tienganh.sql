@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th10 12, 2018 lúc 09:00 PM
--- Phiên bản máy phục vụ: 10.2.14-MariaDB
--- Phiên bản PHP: 5.6.38
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 12, 2018 lúc 05:22 PM
+-- Phiên bản máy phục vụ: 10.1.32-MariaDB
+-- Phiên bản PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `vnsthuoc_web`
+-- Cơ sở dữ liệu: `vnsoft_tienganh`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `access` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `access` text CHARACTER SET utf8 DEFAULT NULL
+  `access` text CHARACTER SET utf8
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -58,14 +58,14 @@ CREATE TABLE `alias` (
   `id` int(11) NOT NULL,
   `alias` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `type` char(50) CHARACTER SET utf8 DEFAULT NULL,
-  `item_id` int(11) DEFAULT 0,
-  `new_cat` int(11) DEFAULT 0,
-  `new` int(11) DEFAULT 0,
-  `pro_cat` int(11) DEFAULT 0,
-  `pro` int(11) DEFAULT 0,
-  `page` int(11) DEFAULT 0,
-  `m_cat` int(11) DEFAULT 0,
-  `media` int(11) DEFAULT 0,
+  `item_id` int(11) DEFAULT '0',
+  `new_cat` int(11) DEFAULT '0',
+  `new` int(11) DEFAULT '0',
+  `pro_cat` int(11) DEFAULT '0',
+  `pro` int(11) DEFAULT '0',
+  `page` int(11) DEFAULT '0',
+  `m_cat` int(11) DEFAULT '0',
+  `media` int(11) DEFAULT '0',
   `locale` int(11) DEFAULT NULL,
   `brand` int(11) DEFAULT NULL,
   `inuser` int(11) DEFAULT NULL,
@@ -80,32 +80,22 @@ CREATE TABLE `alias` (
 --
 
 INSERT INTO `alias` (`id`, `alias`, `type`, `item_id`, `new_cat`, `new`, `pro_cat`, `pro`, `page`, `m_cat`, `media`, `locale`, `brand`, `inuser`, `video_cat`, `video`, `services_cat`, `services`) VALUES
-(383, 'thong-tin-khuyen-mai', 'cate-new', 0, 14, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(384, 'tin-tuc-hoat-dong', 'cate-new', 0, 15, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(386, 'thong-tin-ho-tro', 'cate-new', 0, 17, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(388, 'nhung-dieu-can-biet-ve-glutathione', 'cate-new', 0, 19, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(389, 'tat-ca-nhung-dieu-ban-can-biet-ve-khoang-chat', 'cate-new', 0, 20, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(390, 'tat-tat-ve-me-va-be', 'cate-new', 0, 21, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(391, 'avamys', 'new', 0, 0, 27, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(384, 'tin-tuc-su-kien', 'cate-new', 0, 15, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (392, 'phu-nu-sau-sinh-va-nhung-dieu-can-biet', 'new', 0, 0, 28, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (393, 'tu-van-tu-chuyen-gia-pgs-thay-thuoc-uu-tu-vu-manh-hung-ve-strong-hair', 'new', 0, 0, 29, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (394, 'cac-thanh-phan-cau-tao-gluta', 'new', 0, 0, 30, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (395, 'chinh-sach-doi-tra-va-hoan-tien', 'new', 0, 0, 31, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(396, 'chinh-sach-bao-mat-thong-tin', 'new', 0, 0, 32, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (469, 'men-song-bach-mai', 'pro', 0, 0, 0, 0, 232, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(398, 'giam-can-cham-soc-toc-chuyen-sau', 'cate-pro', 0, 0, 0, 83, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(483, 'tieng-anh-mau-giao', 'cate-pro', 0, 0, 0, 111, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (449, 'kien-khop-tieu-thong-collagen-hvqy-chuyen-biet-benh-thoat-vi-dia-dem-xuong-khop-nguoi-gia', 'pro', 0, 0, 0, 0, 214, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(434, 'nano-curcumin-ung-thu-toi-den-hvqy', 'cate-pro', 0, 0, 0, 103, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(436, 'toi-den-hoc-vien-quan-y', 'cate-pro', 0, 0, 0, 105, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(437, 'xuong-khop-tieu-duong-da-day-thai-doc', 'cate-pro', 0, 0, 0, 106, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(438, 'my-pham-lam-dep', 'cate-pro', 0, 0, 0, 107, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(434, 'chuong-trinh-dao-tao', 'cate-pro', 0, 0, 0, 103, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(484, 'tieng-anh-thieu-nhi', 'cate-pro', 0, 0, 0, 112, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(485, 'tieng-anh-thieu-nien', 'cate-pro', 0, 0, 0, 113, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (446, 'thanh-duong-gamosa-hoc-vien-quan-y-on-dinh-tieu-duong-giam-bien-chung-tieu-duong', 'pro', 0, 0, 0, 0, 211, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (447, 'tra-tam-that-xa-den-ho-tro-dieu-tri-benh-ung-thu', 'pro', 0, 0, 0, 0, 212, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (448, 'tra-tanaka-giup-ha-huyet-ap-giup-ngu-tot-phong-ngua-dot-quy', 'pro', 0, 0, 0, 0, 213, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(439, 'cham-soc-toc-chuyen-sau', 'cate-pro', 0, 0, 0, 108, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (440, 'strong-hair-hoc-vien-quan-y', 'pro', 0, 0, 0, 0, 206, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (442, 'vien-sang-da-suong-mai-hoc-vien-quan-y-sang-da-dep-tu-ben-trong', 'pro', 0, 0, 0, 0, 208, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(443, 'tra-an-than-ngu-ngon', 'cate-pro', 0, 0, 0, 109, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (444, 'tra-dahatala-hoc-vien-quan-y-ho-tro-dieu-tri-benh-tieu-duong', 'pro', 0, 0, 0, 0, 209, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (445, 'siro-laroxen-hoc-vien-quan-y-chuyen-dung-cho-benh-nhan-mat-ngu-bang-thao-duoc', 'pro', 0, 0, 0, 0, 210, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (424, 'chinh-sach-bao-tri-bao-duong', 'page', 0, 0, 0, 0, 0, 51, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -132,7 +122,7 @@ INSERT INTO `alias` (`id`, `alias`, `type`, `item_id`, `new_cat`, `new`, `pro_ca
 (463, 'nano-fucomin-hoc-vien-quan-y', 'pro', 0, 0, 0, 0, 228, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (464, 'nano-curcumin-hoc-vien-quan-y-chuyen-viem-loet-da-day-viem-loet-hanh-ta-trang', 'pro', 0, 0, 0, 0, 229, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (465, 'hoc-vien-quan-y', 'brand', 0, 0, 0, 0, 0, 0, 0, 0, NULL, 39, NULL, NULL, NULL, NULL, NULL),
-(466, 'me-va-be-my-pham', 'cate-pro', 0, 0, 0, 110, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(486, 'tieng-anh-giao-tiep', 'cate-pro', 0, 0, 0, 114, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (467, 'siro-an-ngon-navikid-hoc-vien-quan-y-cho-tre-mau-lon', 'pro', 0, 0, 0, 0, 230, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (468, 'com-bo-safical-iq', 'pro', 0, 0, 0, 0, 231, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (470, 'dinh-tam-an-giac-hvqy-chiet-xuat-ham-luong-cao', 'pro', 0, 0, 0, 0, 233, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -165,12 +155,12 @@ CREATE TABLE `cashbook` (
   `hour_create` char(30) DEFAULT NULL,
   `date_time` int(11) DEFAULT NULL,
   `time_create` int(11) DEFAULT NULL,
-  `note` text DEFAULT NULL,
+  `note` text,
   `type_id` int(11) DEFAULT NULL,
   `user_pay` int(11) DEFAULT NULL,
   `group_pay` char(50) DEFAULT NULL,
   `bill_code` varchar(255) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT 1
+  `status` tinyint(1) DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -183,7 +173,7 @@ CREATE TABLE `cashtype` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
-  `note` text DEFAULT NULL,
+  `note` text,
   `type` tinyint(1) DEFAULT NULL COMMENT '1:phiếu thu 0 phiếu chi'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -198,7 +188,7 @@ CREATE TABLE `code_sale` (
   `name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `code` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `active` int(1) DEFAULT 1
+  `active` int(1) DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -218,10 +208,10 @@ CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
-  `comment` text CHARACTER SET utf8 DEFAULT NULL,
+  `comment` text CHARACTER SET utf8,
   `reply` int(11) DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
-  `review` tinyint(1) NOT NULL DEFAULT 0
+  `review` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
@@ -239,9 +229,9 @@ CREATE TABLE `comments_binhluan` (
   `parent_id` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `date` date NOT NULL,
-  `flg` int(1) NOT NULL DEFAULT 0 COMMENT '0: moi binh luan; 1: xac nhan de hien thi',
+  `flg` int(1) NOT NULL DEFAULT '0' COMMENT '0: moi binh luan; 1: xac nhan de hien thi',
   `reply` int(11) DEFAULT NULL,
-  `review` tinyint(1) DEFAULT 0,
+  `review` tinyint(1) DEFAULT '0',
   `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1'
@@ -404,9 +394,9 @@ CREATE TABLE `contact` (
   `address` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `city` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `country` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `comment` text CHARACTER SET utf8 DEFAULT NULL,
-  `mark` tinyint(1) DEFAULT 0,
-  `show` tinyint(1) DEFAULT 0,
+  `comment` text CHARACTER SET utf8,
+  `mark` tinyint(1) DEFAULT '0',
+  `show` tinyint(1) DEFAULT '0',
   `time` int(11) DEFAULT NULL,
   `cat_name` varchar(200) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -439,7 +429,7 @@ CREATE TABLE `customer` (
   `ward` int(10) UNSIGNED DEFAULT NULL,
   `company` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `tax_code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `note` text CHARACTER SET utf8 DEFAULT NULL,
+  `note` text CHARACTER SET utf8,
   `user_id` int(11) DEFAULT NULL,
   `payment` int(11) DEFAULT NULL,
   `date` char(30) COLLATE utf8_bin DEFAULT NULL,
@@ -468,10 +458,10 @@ CREATE TABLE `customer_debt` (
   `id_customer` int(11) DEFAULT NULL,
   `id_create` int(11) DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
-  `nkd` float(22,0) DEFAULT 0,
-  `ghino` float(22,0) DEFAULT 0,
-  `ghico` float(22,0) DEFAULT 0,
-  `nkc` float(22,0) DEFAULT 0,
+  `nkd` float(22,0) DEFAULT '0',
+  `ghino` float(22,0) DEFAULT '0',
+  `ghico` float(22,0) DEFAULT '0',
+  `nkc` float(22,0) DEFAULT '0',
   `type` varchar(255) DEFAULT NULL,
   `date_time` int(11) DEFAULT NULL,
   `time_insert` int(11) DEFAULT NULL,
@@ -494,7 +484,7 @@ INSERT INTO `customer_debt` (`id`, `id_customer`, `id_create`, `code`, `nkd`, `g
 
 CREATE TABLE `debt_supplier` (
   `id` int(11) NOT NULL,
-  `nkd` float(22,0) DEFAULT 0,
+  `nkd` float(22,0) DEFAULT '0',
   `ghino` float(22,0) DEFAULT NULL,
   `ghico` float(22,0) DEFAULT NULL,
   `nkc` float(22,0) DEFAULT NULL,
@@ -584,11 +574,11 @@ INSERT INTO `district` (`id`, `name`, `pre`, `provinceid`) VALUES
 CREATE TABLE `document` (
   `id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `parent_id` int(11) DEFAULT 0,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `parent_id` int(11) DEFAULT '0',
+  `description` text CHARACTER SET utf8,
   `sort` int(3) DEFAULT NULL,
   `lang` char(10) CHARACTER SET utf8 DEFAULT '1',
-  `active` int(1) DEFAULT 1
+  `active` int(1) DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -628,9 +618,9 @@ CREATE TABLE `images` (
   `image` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `id_item` int(11) DEFAULT NULL,
   `sort` int(3) DEFAULT NULL,
-  `cate` int(4) DEFAULT 0,
+  `cate` int(4) DEFAULT '0',
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL,
-  `content` text CHARACTER SET utf8 DEFAULT NULL
+  `content` text CHARACTER SET utf8
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -638,8 +628,8 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `type`, `url`, `title`, `target`, `name`, `image`, `id_item`, `sort`, `cate`, `lang`, `content`) VALUES
-(324, 'banner', '', 'Giảm giá', '_self', NULL, 'upload/img/banner/anh-web.jpg', NULL, 2, 0, 'vi', '<p>Chương tr&igrave;nh Black Friday của THẢO DƯỢC QU&Acirc;N Y 103&nbsp;</p>\r\n'),
-(325, 'banner', '', 'Thảo dược quân Y 103', '_self', NULL, 'upload/img/banner/untitled.png', NULL, 1, 0, 'vi', '');
+(324, 'banner', '', 'Giảm giá', '_self', NULL, 'upload/img/banner/banner12.png', NULL, 2, 0, 'vi', '<p>Chương tr&igrave;nh Black Friday của THẢO DƯỢC QU&Acirc;N Y 103&nbsp;</p>\r\n'),
+(325, 'banner', '', 'Thảo dược quân Y 103', '_self', NULL, 'upload/img/banner/banner11.png', NULL, 1, 0, 'vi', '');
 
 -- --------------------------------------------------------
 
@@ -650,20 +640,20 @@ INSERT INTO `images` (`id`, `type`, `url`, `title`, `target`, `name`, `image`, `
 CREATE TABLE `inuser` (
   `id` int(11) NOT NULL,
   `title` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
   `hot` int(11) DEFAULT NULL,
   `image` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci,
   `alias` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
-  `tag` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tag` text COLLATE utf8_unicode_ci,
   `time` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `home` int(11) DEFAULT NULL,
   `focus` int(11) DEFAULT NULL,
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `keyword_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description_seo` text COLLATE utf8_unicode_ci DEFAULT NULL
+  `description_seo` text COLLATE utf8_unicode_ci
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
@@ -676,14 +666,14 @@ CREATE TABLE `inuser_category` (
   `id` int(11) NOT NULL,
   `name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `alias` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
   `image` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `home` int(11) DEFAULT NULL,
   `focus` int(11) DEFAULT NULL,
   `hot` int(11) DEFAULT NULL,
   `tour` int(11) DEFAULT NULL,
-  `sort` int(5) DEFAULT 1,
+  `sort` int(5) DEFAULT '1',
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link_website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -734,23 +724,23 @@ CREATE TABLE `invoices` (
   `customer_birthday` char(30) DEFAULT NULL,
   `user_create` int(11) DEFAULT NULL,
   `user_sale` int(11) DEFAULT NULL,
-  `note` text DEFAULT NULL,
-  `total_price` int(11) DEFAULT 0,
-  `price_sale` int(11) DEFAULT 0,
-  `customer_pay` int(11) DEFAULT 0,
-  `customer_payted` int(11) DEFAULT 0,
-  `price_return` int(11) DEFAULT 0,
-  `price_returned` int(11) DEFAULT 0,
+  `note` text,
+  `total_price` int(11) DEFAULT '0',
+  `price_sale` int(11) DEFAULT '0',
+  `customer_pay` int(11) DEFAULT '0',
+  `customer_payted` int(11) DEFAULT '0',
+  `price_return` int(11) DEFAULT '0',
+  `price_returned` int(11) DEFAULT '0',
   `status` tinyint(1) DEFAULT NULL,
   `time_buy` int(11) DEFAULT NULL,
   `count` int(11) DEFAULT NULL,
-  `sale` int(11) DEFAULT 0,
-  `debt` int(11) DEFAULT 0,
-  `nkd` float DEFAULT 0,
-  `nkc` float DEFAULT 0,
+  `sale` int(11) DEFAULT '0',
+  `debt` int(11) DEFAULT '0',
+  `nkd` float DEFAULT '0',
+  `nkc` float DEFAULT '0',
   `refund` int(11) DEFAULT NULL,
   `usersale_name` varchar(255) DEFAULT NULL,
-  `type` tinyint(1) DEFAULT 0 COMMENT '0 : bán hàng / 1 trả hàng'
+  `type` tinyint(1) DEFAULT '0' COMMENT '0 : bán hàng / 1 trả hàng'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 --
@@ -773,14 +763,14 @@ CREATE TABLE `invoices_detail` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
-  `quantity` int(11) DEFAULT 0,
-  `price` int(11) DEFAULT 0,
-  `price_sale` int(11) DEFAULT 0,
-  `price_imp` int(11) DEFAULT 0 COMMENT 'Giá Vốn của sản phẩm thời điểm tạo hoá đơn',
-  `price_return_imp` int(11) DEFAULT 0,
-  `price_return` int(11) DEFAULT 0 COMMENT 'Giá sp khi khách trả hàng',
-  `qty_return` int(11) DEFAULT 0,
-  `sale` int(11) DEFAULT 0,
+  `quantity` int(11) DEFAULT '0',
+  `price` int(11) DEFAULT '0',
+  `price_sale` int(11) DEFAULT '0',
+  `price_imp` int(11) DEFAULT '0' COMMENT 'Giá Vốn của sản phẩm thời điểm tạo hoá đơn',
+  `price_return_imp` int(11) DEFAULT '0',
+  `price_return` int(11) DEFAULT '0' COMMENT 'Giá sp khi khách trả hàng',
+  `qty_return` int(11) DEFAULT '0',
+  `sale` int(11) DEFAULT '0',
   `inv_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
@@ -884,7 +874,7 @@ CREATE TABLE `media` (
   `id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `description` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `content` text CHARACTER SET utf8 DEFAULT NULL,
+  `content` text CHARACTER SET utf8,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `description_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -895,7 +885,7 @@ CREATE TABLE `media` (
   `focus` tinyint(1) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   `image` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `active` tinyint(1) DEFAULT 1,
+  `active` tinyint(1) DEFAULT '1',
   `alias` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -916,10 +906,10 @@ CREATE TABLE `media_category` (
   `coupon` tinyint(1) DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `description_seo` text CHARACTER SET utf8 DEFAULT NULL,
+  `description_seo` text CHARACTER SET utf8,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `parent_id` int(11) DEFAULT NULL,
   `hot` tinyint(1) DEFAULT NULL,
   `left_right` int(11) NOT NULL,
@@ -957,11 +947,11 @@ CREATE TABLE `menu` (
   `target` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `seturl` tinyint(2) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
   `module` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cat_id` int(11) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
-  `home` tinyint(1) DEFAULT 0,
+  `home` tinyint(1) DEFAULT '0',
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
   `view_type` char(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `style` int(1) DEFAULT NULL,
@@ -973,26 +963,22 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `name`, `url`, `image`, `alias`, `position`, `target`, `seturl`, `parent_id`, `description`, `module`, `cat_id`, `sort`, `home`, `lang`, `view_type`, `style`, `level`) VALUES
-(116, 'Giới thiệu', 'page/gioi-thieu.html', NULL, 'gioi-thieu', 'main', '', NULL, 0, '', 'pages', 0, 0, 0, 'vi', NULL, NULL, 0),
-(117, 'Sản phẩm', 'san-pham', NULL, 'san-pham', 'main', '', NULL, 0, '', '0', 0, 1, 0, 'vi', NULL, NULL, 0),
-(118, 'Báo giá', 'danh-muc-tin/thong-tin-khuyen-mai.html', NULL, 'bao-gia', 'main', '', NULL, 0, '', 'news', 14, 2, 0, 'vi', NULL, NULL, 0),
-(120, 'Tin tức', 'danh-muc-tin/tin-tuc-hoat-dong.html', NULL, 'tin-tuc', 'main', '', NULL, 0, '', 'news', 15, 3, 0, 'vi', NULL, NULL, 0),
-(121, 'Liên hệ', 'lien-he', NULL, 'lien-he', 'main', '', NULL, 0, '', '0', 0, 4, 0, 'vi', NULL, NULL, 0),
+(116, 'Tại sao chọn EFA', 'page/gioi-thieu.html', NULL, 'tai-sao-chon-efa', 'main', '', NULL, 0, '', 'pages', 0, 0, 0, 'vi', NULL, NULL, 0),
+(117, 'Chương trình đạo tạo', 'danh-muc/chuong-trinh-dao-tao.html', NULL, 'chuong-trinh-dao-tao', 'main', '', NULL, 0, '', 'products', 103, 1, 0, 'vi', NULL, NULL, 0),
+(118, 'Tiện ích', 'danh-muc-tin/thong-tin-khuyen-mai.html', NULL, 'tien-ich', 'main', '', NULL, 0, '', 'news', 0, 2, 0, 'vi', NULL, NULL, 0),
+(120, 'Hệ thống trung tâm', 'danh-muc-tin/tin-tuc-hoat-dong.html', NULL, 'he-thong-trung-tam', 'main', '', NULL, 0, '', 'news', 0, 3, 0, 'vi', NULL, NULL, 0),
+(121, 'Hoạt động ngoại khóa', 'lien-he', NULL, 'hoat-dong-ngoai-khoa', 'main', '', NULL, 0, '', '0', 0, 4, 0, 'vi', NULL, NULL, 0),
 (122, 'Tin tức, hoạt động', 'danh-muc-tin/tin-tuc-hoat-dong.html', NULL, 'tin-tuc-hoat-dong', 'left', '', NULL, 0, '', 'news', 15, 0, 0, 'vi', NULL, NULL, 0),
 (123, 'Khuyến mại, ưu đãi', 'danh-muc-tin/khuyen-mai-uu-dai.html', NULL, 'khuyen-mai-uu-dai', 'left', '', NULL, 0, '', 'news', 16, 1, 0, 'vi', NULL, NULL, 0),
 (125, 'Chính sách bán hàng', 'page/chinh-sach-ban-hang.html', NULL, 'chinh-sach-ban-hang', 'bottom', '', NULL, 0, '', 'pages', 0, 0, 0, 'vi', NULL, NULL, 0),
 (126, 'Chinh sách bảo mật thông tin', 'page/chinh-sach-bao-mat-thong-tin-kh.html', NULL, 'chinh-sach-bao-mat-thong-tin', 'bottom', '', NULL, 0, '', 'pages', 0, 1, 0, 'vi', NULL, NULL, 0),
 (127, 'Chính sách dịch vụ', 'page/chinh-sach-dich-vu.html', NULL, 'chinh-sach-dich-vu', 'bottom', '', NULL, 0, '', 'pages', 0, 2, 0, 'vi', NULL, NULL, 0),
 (128, 'Chính sách thanh toán', 'page/chinh-sach-thanh-toan.html', NULL, 'chinh-sach-thanh-toan', 'bottom', '', NULL, 0, '', 'pages', 0, 3, 0, 'vi', NULL, NULL, 0),
-(129, 'Nano - Curcumin - Ung Thư', 'danh-muc/nano-curcumin-ung-thu.html', NULL, 'nano-curcumin-ung-thu', 'main', '', NULL, 117, '', 'products', 103, 7, 0, 'vi', NULL, NULL, 0),
-(130, 'Chăm sóc tóc chuyên sâu', 'danh-muc/cham-soc-toc-chuyen-sau.html', NULL, 'cham-soc-toc-chuyen-sau', 'main', '', NULL, 117, '', 'products', 108, 8, 0, 'vi', NULL, NULL, 0),
-(131, 'Dạ dày - Gan -Thận - Đại Tràng - Thải Độc', 'danh-muc/da-day-gan-than-dai-trang-thai-doc.html', NULL, 'da-day-gan-than-dai-trang-thai-doc', 'main', '', NULL, 117, '', 'products', 106, 6, 0, 'vi', NULL, NULL, 0),
-(132, 'Giảm Cân - Làm đẹp', 'danh-muc/giam-can-lam-dep.html', NULL, 'giam-can-lam-dep', 'main', '', NULL, 117, '', 'products', 83, 5, 0, 'vi', NULL, NULL, 0),
-(133, 'Mẹ và Bé', 'danh-muc/me-va-be.html', NULL, 'me-va-be', 'main', '', NULL, 117, '', 'products', 110, 4, 0, 'vi', NULL, NULL, 0),
-(134, 'Mỹ phẩm - Làm đẹp', 'danh-muc/my-pham-lam-dep.html', NULL, 'my-pham-lam-dep', 'main', '', NULL, 117, '', 'products', 107, 3, 0, 'vi', NULL, NULL, 0),
-(135, 'TrÀ - An Thần ngủ ngon', 'danh-muc/tra-an-than-ngu-ngon.html', NULL, 'tra-an-than-ngu-ngon', 'main', '', NULL, 117, '', 'products', 109, 2, 0, 'vi', NULL, NULL, 0),
-(136, 'Tỏi đen Học Viện Quân Y', 'danh-muc/toi-den-hoc-vien-quan-y.html', NULL, 'toi-den-hoc-vien-quan-y', 'main', '', NULL, 117, '', 'products', 105, 1, 0, 'vi', NULL, NULL, 0),
-(137, 'Xương Khớp - Tiểu đường', 'danh-muc/xuong-khop-tieu-duong.html', NULL, 'xuong-khop-tieu-duong', 'main', '', NULL, 117, '', 'products', 104, 0, 0, 'vi', NULL, NULL, 0);
+(131, 'Tiếng anh giao tiếp', 'danh-muc/tieng-anh-giao-tiep.html', NULL, 'tieng-anh-giao-tiep', 'main', '', NULL, 117, '', 'products', 114, 3, 0, 'vi', NULL, NULL, 0),
+(132, 'Tiếng anh thiếu niên', 'danh-muc/tieng-anh-thieu-nien.html', NULL, 'tieng-anh-thieu-nien', 'main', '', NULL, 117, '', 'products', 113, 2, 0, 'vi', NULL, NULL, 0),
+(133, 'Tiếng anh thiếu nhi', 'danh-muc/tieng-anh-thieu-nhi.html', NULL, 'tieng-anh-thieu-nhi', 'main', '', NULL, 117, '', 'products', 112, 1, 0, 'vi', NULL, NULL, 0),
+(134, 'Tiếng anh mẫu giáo', 'danh-muc/tieng-anh-mau-giao.html', NULL, 'tieng-anh-mau-giao', 'main', '', NULL, 117, '', 'products', 111, 0, 0, 'vi', NULL, NULL, 0),
+(138, 'Liện hệ', 'lien-he', NULL, 'lien-he', 'main', '', NULL, 0, '', '0', 0, 5, 0, 'vi', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1003,13 +989,13 @@ INSERT INTO `menu` (`id`, `name`, `url`, `image`, `alias`, `position`, `target`,
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
   `title` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
   `hot` int(11) DEFAULT NULL,
   `image` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci,
   `alias` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
-  `tag` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tag` text COLLATE utf8_unicode_ci,
   `time_update` int(8) DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -1017,7 +1003,7 @@ CREATE TABLE `news` (
   `focus` int(11) DEFAULT NULL,
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `keyword_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description_seo` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description_seo` text COLLATE utf8_unicode_ci,
   `video` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `view` int(11) DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
@@ -1029,12 +1015,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `hot`, `image`, `content`, `alias`, `lang`, `tag`, `time_update`, `time`, `category_id`, `home`, `focus`, `title_seo`, `keyword_seo`, `description_seo`, `video`, `view`, `active`, `button_1`) VALUES
-(27, 'AVAMYS', '<p>Thuốc xịt mũi Avamys 60 liều Từ 2 đến 11 tuổi thuoc: Điều trị c&aacute;c triệu chứng ở mũi của cả vi&ecirc;m mũi dị ứng theo m&ugrave;a v&agrave; vi&ecirc;m mũi dị ứng quanh năm. Từ 12 tuổi trở l&ecirc;n v&agrave; người lớn: Điều trị c&aacute;c triệu chứng ở mũi (chảy nước mũi, xung huyết mũi, ngứa mũi, hắt hơi) của vi&ecirc;m mũi dị ứng quanh năm. Điều trị c&aacute;c triệu chứng ở mũi v&agrave; ở mắt (ngứa/ cảm gi&aacute;c r&aacute;t bỏng mắt, chảy nước mắt v&agrave; đỏ mắt) của vi&ecirc;m mũi dị ứng theo m&ugrave;a.</p>\r\n', NULL, 'upload/img/news/avamys-ruby.jpg', '<p>CHI TIẾT<br />\r\nAVAMYS NASAL SPRAY 27.5MCG<br />\r\nLoại mới 60 liều - thuốc xịt điều trị triệu chứng vi&ecirc;m mũi dị ứng<br />\r\nTh&agrave;nh phần thuoc: Fluticasone furoate.<br />\r\nĐ&oacute;ng g&oacute;i: 60 liều/hộp<br />\r\nChỉ định: Triệu chứng vi&ecirc;m mũi dị ứng.<br />\r\nLiều d&ugrave;ng:&nbsp;<br />\r\nNgười lớn, thiếu ni&ecirc;n &ge; 12t. khởi đầu 2 nh&aacute;t xịt mỗi b&ecirc;n mũi, 1 lần/ng&agrave;y; duy tr&igrave; 1 nh&aacute;t xịt mỗi b&ecirc;n mũi, 1 lần/ng&agrave;y. Trẻ 2-11t. 1 nh&aacute;t xịt mỗi b&ecirc;n mũi, 1 lần/ng&agrave;y, nếu kh&ocirc;ng đ&aacute;p ứng đầy đủ: c&oacute; thể 2 nh&aacute;t xịt mỗi b&ecirc;n mũi, 1 lần/ng&agrave;y; sau đ&oacute; giảm liều. Trẻ &lt; 2t. kh&ocirc;ng khuyến c&aacute;o.<br />\r\nChống chỉ định: Qu&aacute; mẫn với th&agrave;nh phần thuốc.<br />\r\nThận trọng: Bệnh nh&acirc;n bệnh gan nặng, c&oacute; thai. Kh&ocirc;ng sử dụng kết hợp ritonavir.<br />\r\nPhản ứng c&oacute; hại: Chảy m&aacute;u cam, lo&eacute;t mũi, đau đầu.<br />\r\n&nbsp;</p>\r\n', 'avamys', 'vi', NULL, NULL, 1538883616, 18, 0, NULL, '', '', '', '', NULL, 1, 0),
-(28, 'Phụ nữ sau sinh và những điều cần biết', '', NULL, 'upload/img/news/sp-pttm2.png', '', 'phu-nu-sau-sinh-va-nhung-dieu-can-biet', 'vi', NULL, NULL, 1538883689, 15, 0, NULL, '', '', '', '', 1, 1, 0),
-(29, 'Tư vấn Từ Chuyên Gia – PGS Thầy Thuốc Ưu Tú Vũ Mạnh Hùng về Strong Hair', '<p>Theo&nbsp;PGS Thầy Thuốc Ưu T&uacute; Vũ Mạnh H&ugrave;ng&nbsp;th&igrave; t&oacute;c của ch&uacute;ng ta c&oacute; rất nhiều c&aacute;c bệnh l&yacute; kh&aacute;c nhau t&ugrave;y thuộc v&agrave;o độ tuổi giới t&iacute;nh m&agrave; chia th&agrave;nh c&aacute;c ph&aacute;p đồ thời gian điều trị kh&aacute;c nhau.&nbsp;C&aacute;c bạn&nbsp;cần lưu &yacute; c&oacute; 3 giai đoạn&nbsp;bệnh l&yacute; về t&oacute;c ch&iacute;nh như sau:,</p>\r\n', NULL, 'upload/img/news/vien-uong-kich-thich-moc-toc-strong-hair-copy.jpg', '<p><img alt=\"\" src=\"/upload/images/strong-hair.jpg\" style=\"height:425px; width:728px\" /></p>\r\n\r\n<p><strong>1&nbsp;&ndash; Nh&oacute;m&nbsp;Bệnh&nbsp;L&yacute; Bạc T&oacute;c Sớm.</strong></p>\r\n\r\n<p>T&oacute;c l&agrave; một tổ chức biệt h&oacute;a, một phần phụ của thượng b&igrave; nhiễm chất sừng v&agrave; sắc tố da (Melanin). B&igrave;nh thường tr&ecirc;n 40 tuổi t&oacute;c mới bắt đầu bạc, do mất sắc tố, gốc t&oacute;c bị teo, l&ograve;ng chứa c&aacute;c bọng kh&iacute; g&acirc;y tắc ch&acirc;n t&oacute;c, dẫn đến rụng t&oacute;c dần v&agrave; bạc t&oacute;c. M&agrave;u đen của t&oacute;c l&agrave; biểu hiện của sức khỏe tốt, tinh thần thoải m&aacute;i, nội tiết c&acirc;n bằng, cơ thể được cung cấp đầy đủ c&aacute;c yếu tố vi lượng như đồng, kẽm&hellip; Bạc t&oacute;c ở giai đoạn dưới 40 tuổi được gọi l&agrave; bạc t&oacute;c sớm.</p>\r\n\r\n<p>Nguy&ecirc;n nh&acirc;n ch&iacute;nh như sau :Chế độ ăn uống thiếu c&acirc;n bằng &ndash;&nbsp;Rối loạn tuyến gi&aacute;p v&agrave; tuyến y&ecirc;n &ndash;&nbsp;&nbsp;H&uacute;t thuốc v&agrave; căng thẳng &ndash;&nbsp;Lạm dụng sản phẩm chăm s&oacute;c t&oacute;c &ndash;&nbsp;Do gen di truyền &ndash;&nbsp;&nbsp;Rối loạn nội tiết.</p>\r\n\r\n<p><strong>Liệu tr&igrave;nh hỗ trợ t&oacute;c bạc sớm hiệu quả nhất n&ecirc;n sử dụng&nbsp;Strong&nbsp;Hair từ 4-6 th&aacute;ng.</strong></p>\r\n\r\n<p><em><strong>Lưu &yacute; :&nbsp;&nbsp;</strong>sử dụng strong hair trong qu&aacute; tr&igrave;nh&nbsp; hỗ trợ Trị bạc t&oacute;c sớm đ&ograve;i hỏi qu&aacute; tr&igrave;nh l&acirc;u d&agrave;i với mục đ&iacute;ch cung cấp c&aacute;c dưỡng chất, c&aacute;c yết tố vi lượng gi&uacute;p k&iacute;ch th&iacute;ch t&oacute;c mới mọc l&ecirc;n đen, khỏe mạnh thay đổi m&agrave;u t&oacute;c bạc cũ. V&igrave; vậy c&aacute;c bạn cần tu&acirc;n thủ đ&uacute;ng hướng dẫn trong qu&aacute; tr&igrave;nh sử dụng</em>.</p>\r\n\r\n<p><strong>2&nbsp;&ndash; Nh&oacute;m T&oacute;c Yếu Kh&ocirc; Xơ, Chẻ Ngọn :&nbsp;</strong></p>\r\n\r\n<p>nguy&ecirc;n nh&acirc;n : c&oacute; rất nhiều nguy&ecirc;n nh&acirc;n dẫn đến t&oacute;c kh&ocirc; xơ trong đ&oacute; phải kể đến nguy&ecirc;n nh&acirc;n ch&iacute;nh đ&oacute; l&agrave; :</p>\r\n\r\n<p><em>Gội đầu kh&ocirc;ng đ&uacute;ng c&aacute;ch &ndash;&nbsp;Sử dụng hơi n&oacute;ng để l&agrave;m đẹp &ndash;&nbsp;Lạm dụng h&oacute;a chất &ndash;&nbsp;Qu&aacute; l&acirc;u kh&ocirc;ng tỉa t&oacute;c &ndash;&nbsp;Kh&ocirc;ng bảo vệ t&oacute;c khi đi nắng &ndash;&nbsp;Ngồi điều h&ograve;a thường xuy&ecirc;n &ndash;&nbsp;Chế độ dinh dưỡng kh&ocirc;ng hợp l&iacute;.</em></p>\r\n\r\n<p><strong>&ndash;&nbsp;</strong>Đối với nh&oacute;m bệnh l&yacute; n&agrave;y c&aacute;c bạn n&ecirc;n khắc phục c&aacute;c nguy&ecirc;n nh&acirc;n kể tr&ecirc;n để cải thiện sớm c&aacute;c vấn đề t&oacute;c yếu, kh&ocirc; Xơ, chẻ ngọn. Ngo&agrave;i ra n&ecirc;n sử dụng liệu tr&igrave;nh vi&ecirc;n uống&nbsp;Strong Hair&nbsp;chăm s&oacute;c t&oacute;c từ b&ecirc;n trong để cung cấp c&aacute;c dưỡng chất nu&ocirc;i dưỡng t&oacute;c chắc khỏe.</p>\r\n\r\n<p><strong>Liệu tr&igrave;nh đối với nh&oacute;m bệnh l&yacute; t&oacute;c yếu, kh&ocirc; xơ, chẻ ngọn n&ecirc;n sử dụng&nbsp;Strong hair&nbsp; từ 2-3 th&aacute;ng.</strong></p>\r\n\r\n<ul>\r\n	<li><em><strong>Lưu &yacute; :&nbsp;</strong>&nbsp;Bệnh l&yacute; về t&oacute;c yếu, kh&ocirc;&nbsp;xơ, chẻ ngọn nếu kh&ocirc;ng chữa triệt để sẽ chuyển sang giai đoạn g&atilde;y dụng kh&oacute; kiểm so&aacute;t g&acirc;y hậu quả nghi&ecirc;m trọng tới sức khỏe t&acirc;m l&yacute; của người mắc phải.&nbsp;</em></li>\r\n</ul>\r\n\r\n<p><strong>3- Nh&oacute;m Bệnh L&yacute;&nbsp;Rụng T&oacute;c.</strong></p>\r\n\r\n<p>Kh&ocirc;ng chỉ ri&ecirc;ng phụ nữ, rụng t&oacute;c cũng l&agrave; nỗi &aacute;m ảnh của đ&agrave;n &ocirc;ng. Rụng t&oacute;c c&oacute; nhiều nguy&ecirc;n nh&acirc;n g&acirc;y ra ngo&agrave;i c&aacute;c nguy&ecirc;n nh&acirc;n của nh&oacute;m 1 như tr&ecirc;n&nbsp; c&ograve;n c&oacute; c&aacute;c nguy&ecirc;n nh&acirc;n&nbsp;ch&iacute;nh như sau:</p>\r\n\r\n<p>Ăn uống mất c&acirc;n bằng, thiếu hụt vitamin B5, biotin &ndash;&nbsp;Mất c&acirc;n bằng nội tiết tố &ndash;&nbsp;Sử dụng thuốc điều trị bệnh &ndash;&nbsp;Tạo qu&aacute; nhiều &aacute;p lực l&ecirc;n t&oacute;c &ndash;&nbsp;Căng thẳng, lo lắng nhiều &ndash;&nbsp;Di truyền &ndash;&nbsp;C&aacute;c bệnh về da đầu .<img alt=\"\" src=\"/upload/images/rambutrontok.jpg\" style=\"height:415px; width:700px\" /></p>\r\n\r\n<p><strong>Liệu tr&igrave;nh tốt nhất đối với nh&oacute;m&nbsp;rụng t&oacute;c n&ecirc;n sử dụng&nbsp;strong hair&nbsp;từ 3 đến 4 th&aacute;ng.</strong></p>\r\n\r\n<ul>\r\n	<li><em><strong>Lưu &yacute; :</strong>&nbsp;Hỗ Trợ&nbsp;Trị&nbsp;Rụng&nbsp;T&oacute;c sẽ mất nhiều thời gian hơn nh&oacute;m 1 . trong qu&aacute; tr&igrave;nh n&agrave;y&nbsp;c&aacute;c bạn cần tu&acirc;n thủ đ&uacute;ng c&aacute;c vấn đề g&acirc;y t&aacute;c động xấu g&acirc;y tổn thương đến t&oacute;c như uốn, nhuộm, sấy..v..v..</em></li>\r\n</ul>\r\n\r\n<h3>Hướng&nbsp;Dẫn&nbsp;Sử&nbsp;Dụng&nbsp;Strong&nbsp;Hair.</h3>\r\n\r\n<p>STRONG HAIR : 1Hộp 30 vi&ecirc;n</p>\r\n\r\n<p>&ndash; Ng&agrave;y uống 2 vi&ecirc;n/lần x 2 lần/ng&agrave;y. Uống trước bữa ăn 30 ph&uacute;t hoặc sau khi ăn 1 giờ.<br />\r\n&ndash; N&ecirc;n sử dụng li&ecirc;n tục một đợt 2-4 th&aacute;ng.<br />\r\nGP C&Ocirc;NG BỐ:&nbsp;4912/2018/ATTP-XNCB</p>\r\n\r\n<p>Gi&aacute; 1H Strong Hair tại THẢO DƯỢC QU&Acirc;N Y 103 đang KM : 220.000 đ</p>\r\n\r\n<p>1 Liệu tr&igrave;nh 4H: 850.000 đ&nbsp;</p>\r\n\r\n<p>Zalo/Viber: 0966.82.09.79</p>\r\n', 'tu-van-tu-chuyen-gia-pgs-thay-thuoc-uu-tu-vu-manh-hung-ve-strong-hair', 'vi', NULL, NULL, 1541255881, 17, 1, NULL, '', '', '', '', NULL, 1, 0),
-(30, 'Các thành phần cấu tạo Gluta', '', NULL, 'upload/img/news/sp-pttm3.png', '', 'cac-thanh-phan-cau-tao-gluta', 'vi', NULL, NULL, 1538883760, 18, 0, NULL, '', '', '', '', NULL, 1, 0),
-(31, 'Chính sách đổi trả và hoàn tiền', '', NULL, 'upload/img/news/sp-pttm21.png', '', 'chinh-sach-doi-tra-va-hoan-tien', 'vi', NULL, NULL, 1538883835, 17, 0, NULL, '', '', '', '', NULL, 1, 0),
-(32, 'Chính sách bảo mật thông tin', '', NULL, 'upload/img/news/sp-pttm31.png', '', 'chinh-sach-bao-mat-thong-tin', 'vi', NULL, NULL, 1538883859, 17, 0, NULL, '', '', '', '', NULL, 1, 0);
+(28, 'Phụ nữ sau sinh và những điều cần biết', '', NULL, 'upload/img/news/news11.png', '', 'phu-nu-sau-sinh-va-nhung-dieu-can-biet', 'vi', NULL, NULL, 1542038247, 15, 1, NULL, '', '', '', '', 1, 1, 0),
+(29, 'Tư vấn Từ Chuyên Gia – PGS Thầy Thuốc Ưu Tú Vũ Mạnh Hùng về Strong Hair', '<p>Theo&nbsp;PGS Thầy Thuốc Ưu T&uacute; Vũ Mạnh H&ugrave;ng&nbsp;th&igrave; t&oacute;c của ch&uacute;ng ta c&oacute; rất nhiều c&aacute;c bệnh l&yacute; kh&aacute;c nhau t&ugrave;y thuộc v&agrave;o độ tuổi giới t&iacute;nh m&agrave; chia th&agrave;nh c&aacute;c ph&aacute;p đồ thời gian điều trị kh&aacute;c nhau.&nbsp;C&aacute;c bạn&nbsp;cần lưu &yacute; c&oacute; 3 giai đoạn&nbsp;bệnh l&yacute; về t&oacute;c ch&iacute;nh như sau:,</p>\r\n', NULL, 'upload/img/news/news1.png', '<p><img alt=\"\" src=\"/upload/images/strong-hair.jpg\" style=\"height:425px; width:728px\" /></p>\r\n\r\n<p><strong>1&nbsp;&ndash; Nh&oacute;m&nbsp;Bệnh&nbsp;L&yacute; Bạc T&oacute;c Sớm.</strong></p>\r\n\r\n<p>T&oacute;c l&agrave; một tổ chức biệt h&oacute;a, một phần phụ của thượng b&igrave; nhiễm chất sừng v&agrave; sắc tố da (Melanin). B&igrave;nh thường tr&ecirc;n 40 tuổi t&oacute;c mới bắt đầu bạc, do mất sắc tố, gốc t&oacute;c bị teo, l&ograve;ng chứa c&aacute;c bọng kh&iacute; g&acirc;y tắc ch&acirc;n t&oacute;c, dẫn đến rụng t&oacute;c dần v&agrave; bạc t&oacute;c. M&agrave;u đen của t&oacute;c l&agrave; biểu hiện của sức khỏe tốt, tinh thần thoải m&aacute;i, nội tiết c&acirc;n bằng, cơ thể được cung cấp đầy đủ c&aacute;c yếu tố vi lượng như đồng, kẽm&hellip; Bạc t&oacute;c ở giai đoạn dưới 40 tuổi được gọi l&agrave; bạc t&oacute;c sớm.</p>\r\n\r\n<p>Nguy&ecirc;n nh&acirc;n ch&iacute;nh như sau :Chế độ ăn uống thiếu c&acirc;n bằng &ndash;&nbsp;Rối loạn tuyến gi&aacute;p v&agrave; tuyến y&ecirc;n &ndash;&nbsp;&nbsp;H&uacute;t thuốc v&agrave; căng thẳng &ndash;&nbsp;Lạm dụng sản phẩm chăm s&oacute;c t&oacute;c &ndash;&nbsp;Do gen di truyền &ndash;&nbsp;&nbsp;Rối loạn nội tiết.</p>\r\n\r\n<p><strong>Liệu tr&igrave;nh hỗ trợ t&oacute;c bạc sớm hiệu quả nhất n&ecirc;n sử dụng&nbsp;Strong&nbsp;Hair từ 4-6 th&aacute;ng.</strong></p>\r\n\r\n<p><em><strong>Lưu &yacute; :&nbsp;&nbsp;</strong>sử dụng strong hair trong qu&aacute; tr&igrave;nh&nbsp; hỗ trợ Trị bạc t&oacute;c sớm đ&ograve;i hỏi qu&aacute; tr&igrave;nh l&acirc;u d&agrave;i với mục đ&iacute;ch cung cấp c&aacute;c dưỡng chất, c&aacute;c yết tố vi lượng gi&uacute;p k&iacute;ch th&iacute;ch t&oacute;c mới mọc l&ecirc;n đen, khỏe mạnh thay đổi m&agrave;u t&oacute;c bạc cũ. V&igrave; vậy c&aacute;c bạn cần tu&acirc;n thủ đ&uacute;ng hướng dẫn trong qu&aacute; tr&igrave;nh sử dụng</em>.</p>\r\n\r\n<p><strong>2&nbsp;&ndash; Nh&oacute;m T&oacute;c Yếu Kh&ocirc; Xơ, Chẻ Ngọn :&nbsp;</strong></p>\r\n\r\n<p>nguy&ecirc;n nh&acirc;n : c&oacute; rất nhiều nguy&ecirc;n nh&acirc;n dẫn đến t&oacute;c kh&ocirc; xơ trong đ&oacute; phải kể đến nguy&ecirc;n nh&acirc;n ch&iacute;nh đ&oacute; l&agrave; :</p>\r\n\r\n<p><em>Gội đầu kh&ocirc;ng đ&uacute;ng c&aacute;ch &ndash;&nbsp;Sử dụng hơi n&oacute;ng để l&agrave;m đẹp &ndash;&nbsp;Lạm dụng h&oacute;a chất &ndash;&nbsp;Qu&aacute; l&acirc;u kh&ocirc;ng tỉa t&oacute;c &ndash;&nbsp;Kh&ocirc;ng bảo vệ t&oacute;c khi đi nắng &ndash;&nbsp;Ngồi điều h&ograve;a thường xuy&ecirc;n &ndash;&nbsp;Chế độ dinh dưỡng kh&ocirc;ng hợp l&iacute;.</em></p>\r\n\r\n<p><strong>&ndash;&nbsp;</strong>Đối với nh&oacute;m bệnh l&yacute; n&agrave;y c&aacute;c bạn n&ecirc;n khắc phục c&aacute;c nguy&ecirc;n nh&acirc;n kể tr&ecirc;n để cải thiện sớm c&aacute;c vấn đề t&oacute;c yếu, kh&ocirc; Xơ, chẻ ngọn. Ngo&agrave;i ra n&ecirc;n sử dụng liệu tr&igrave;nh vi&ecirc;n uống&nbsp;Strong Hair&nbsp;chăm s&oacute;c t&oacute;c từ b&ecirc;n trong để cung cấp c&aacute;c dưỡng chất nu&ocirc;i dưỡng t&oacute;c chắc khỏe.</p>\r\n\r\n<p><strong>Liệu tr&igrave;nh đối với nh&oacute;m bệnh l&yacute; t&oacute;c yếu, kh&ocirc; xơ, chẻ ngọn n&ecirc;n sử dụng&nbsp;Strong hair&nbsp; từ 2-3 th&aacute;ng.</strong></p>\r\n\r\n<ul>\r\n	<li><em><strong>Lưu &yacute; :&nbsp;</strong>&nbsp;Bệnh l&yacute; về t&oacute;c yếu, kh&ocirc;&nbsp;xơ, chẻ ngọn nếu kh&ocirc;ng chữa triệt để sẽ chuyển sang giai đoạn g&atilde;y dụng kh&oacute; kiểm so&aacute;t g&acirc;y hậu quả nghi&ecirc;m trọng tới sức khỏe t&acirc;m l&yacute; của người mắc phải.&nbsp;</em></li>\r\n</ul>\r\n\r\n<p><strong>3- Nh&oacute;m Bệnh L&yacute;&nbsp;Rụng T&oacute;c.</strong></p>\r\n\r\n<p>Kh&ocirc;ng chỉ ri&ecirc;ng phụ nữ, rụng t&oacute;c cũng l&agrave; nỗi &aacute;m ảnh của đ&agrave;n &ocirc;ng. Rụng t&oacute;c c&oacute; nhiều nguy&ecirc;n nh&acirc;n g&acirc;y ra ngo&agrave;i c&aacute;c nguy&ecirc;n nh&acirc;n của nh&oacute;m 1 như tr&ecirc;n&nbsp; c&ograve;n c&oacute; c&aacute;c nguy&ecirc;n nh&acirc;n&nbsp;ch&iacute;nh như sau:</p>\r\n\r\n<p>Ăn uống mất c&acirc;n bằng, thiếu hụt vitamin B5, biotin &ndash;&nbsp;Mất c&acirc;n bằng nội tiết tố &ndash;&nbsp;Sử dụng thuốc điều trị bệnh &ndash;&nbsp;Tạo qu&aacute; nhiều &aacute;p lực l&ecirc;n t&oacute;c &ndash;&nbsp;Căng thẳng, lo lắng nhiều &ndash;&nbsp;Di truyền &ndash;&nbsp;C&aacute;c bệnh về da đầu .<img alt=\"\" src=\"/upload/images/rambutrontok.jpg\" style=\"height:415px; width:700px\" /></p>\r\n\r\n<p><strong>Liệu tr&igrave;nh tốt nhất đối với nh&oacute;m&nbsp;rụng t&oacute;c n&ecirc;n sử dụng&nbsp;strong hair&nbsp;từ 3 đến 4 th&aacute;ng.</strong></p>\r\n\r\n<ul>\r\n	<li><em><strong>Lưu &yacute; :</strong>&nbsp;Hỗ Trợ&nbsp;Trị&nbsp;Rụng&nbsp;T&oacute;c sẽ mất nhiều thời gian hơn nh&oacute;m 1 . trong qu&aacute; tr&igrave;nh n&agrave;y&nbsp;c&aacute;c bạn cần tu&acirc;n thủ đ&uacute;ng c&aacute;c vấn đề g&acirc;y t&aacute;c động xấu g&acirc;y tổn thương đến t&oacute;c như uốn, nhuộm, sấy..v..v..</em></li>\r\n</ul>\r\n\r\n<h3>Hướng&nbsp;Dẫn&nbsp;Sử&nbsp;Dụng&nbsp;Strong&nbsp;Hair.</h3>\r\n\r\n<p>STRONG HAIR : 1Hộp 30 vi&ecirc;n</p>\r\n\r\n<p>&ndash; Ng&agrave;y uống 2 vi&ecirc;n/lần x 2 lần/ng&agrave;y. Uống trước bữa ăn 30 ph&uacute;t hoặc sau khi ăn 1 giờ.<br />\r\n&ndash; N&ecirc;n sử dụng li&ecirc;n tục một đợt 2-4 th&aacute;ng.<br />\r\nGP C&Ocirc;NG BỐ:&nbsp;4912/2018/ATTP-XNCB</p>\r\n\r\n<p>Gi&aacute; 1H Strong Hair tại THẢO DƯỢC QU&Acirc;N Y 103 đang KM : 220.000 đ</p>\r\n\r\n<p>1 Liệu tr&igrave;nh 4H: 850.000 đ&nbsp;</p>\r\n\r\n<p>Zalo/Viber: 0966.82.09.79</p>\r\n', 'tu-van-tu-chuyen-gia-pgs-thay-thuoc-uu-tu-vu-manh-hung-ve-strong-hair', 'vi', NULL, NULL, 1542038236, 15, 1, NULL, '', '', '', '', NULL, 1, 0),
+(30, 'Các thành phần cấu tạo Gluta', '', NULL, 'upload/img/news/news12.png', '', 'cac-thanh-phan-cau-tao-gluta', 'vi', NULL, NULL, 1542038256, 15, 1, NULL, '', '', '', '', NULL, 1, 0),
+(31, 'Chính sách đổi trả và hoàn tiền', '', NULL, 'upload/img/news/news13.png', '', 'chinh-sach-doi-tra-va-hoan-tien', 'vi', NULL, NULL, 1542038265, 15, 1, NULL, '', '', '', '', NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1046,7 +1030,7 @@ CREATE TABLE `news_category` (
   `id` int(11) NOT NULL,
   `name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `alias` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
   `image` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `home` int(11) DEFAULT NULL,
@@ -1055,11 +1039,11 @@ CREATE TABLE `news_category` (
   `coupon` int(11) DEFAULT NULL,
   `time_update` int(11) DEFAULT NULL,
   `time_start` int(8) DEFAULT NULL,
-  `sort` int(5) DEFAULT 1,
+  `sort` int(5) DEFAULT '1',
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
   `title_seo` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `keyword` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description_seo` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `keyword` text COLLATE utf8_unicode_ci,
+  `description_seo` text COLLATE utf8_unicode_ci,
   `button_view_left` int(11) NOT NULL,
   `button_view_right` int(11) NOT NULL,
   `time` int(11) DEFAULT NULL
@@ -1070,12 +1054,7 @@ CREATE TABLE `news_category` (
 --
 
 INSERT INTO `news_category` (`id`, `name`, `alias`, `description`, `image`, `parent_id`, `home`, `focus`, `hot`, `coupon`, `time_update`, `time_start`, `sort`, `lang`, `title_seo`, `keyword`, `description_seo`, `button_view_left`, `button_view_right`, `time`) VALUES
-(14, 'Thông tin khuyến mãi', 'thong-tin-khuyen-mai', '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, 1, 'vi', '', NULL, '', 0, 0, 1538883020),
-(15, 'Tin tức hoat động', 'tin-tuc-hoat-dong', '', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'vi', '', NULL, '', 0, 0, 1538883033),
-(17, 'Thông tin hỗ trợ', 'thong-tin-ho-tro', '', NULL, 14, 0, NULL, NULL, NULL, NULL, NULL, 4, 'vi', '', NULL, '', 0, 0, 1538883145),
-(19, 'Những điều cần biết về Glutathione', 'nhung-dieu-can-biet-ve-glutathione', '', NULL, 14, 0, NULL, NULL, NULL, NULL, NULL, 6, 'vi', '', NULL, '', 0, 0, 1538883188),
-(20, 'Tất cả những điều bạn cần biết về khoáng chất', 'tat-ca-nhung-dieu-ban-can-biet-ve-khoang-chat', '', NULL, 14, 0, NULL, NULL, NULL, NULL, NULL, 7, 'vi', '', NULL, '', 0, 0, 1538883200),
-(21, 'Tất tật về mẹ và bé', 'tat-tat-ve-me-va-be', '', NULL, 14, 0, NULL, NULL, NULL, NULL, NULL, 8, 'vi', '', NULL, '', 0, 0, 1538883227);
+(15, 'TIN TỨC & SỰ KIỆN', 'tin-tuc-su-kien', '', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, 2, 'vi', '', NULL, '', 0, 0, 1542038205);
 
 -- --------------------------------------------------------
 
@@ -1095,18 +1074,12 @@ CREATE TABLE `news_to_category` (
 
 INSERT INTO `news_to_category` (`id`, `id_news`, `id_category`) VALUES
 (47, 27, 18),
-(48, 28, 14),
-(49, 28, 16),
-(50, 28, 15),
-(62, 29, 16),
-(61, 29, 14),
-(53, 30, 14),
-(54, 30, 18),
-(55, 31, 14),
-(56, 31, 17),
+(65, 28, 15),
+(66, 30, 15),
+(67, 31, 15),
 (57, 32, 14),
 (58, 32, 17),
-(63, 29, 17);
+(64, 29, 15);
 
 -- --------------------------------------------------------
 
@@ -1117,21 +1090,21 @@ INSERT INTO `news_to_category` (`id`, `id_news`, `id_category`) VALUES
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `fullname` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `address` text CHARACTER SET utf8 DEFAULT NULL,
+  `address` text CHARACTER SET utf8,
   `phone` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `email` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `note` text CHARACTER SET utf8 DEFAULT NULL,
+  `note` text CHARACTER SET utf8,
   `item_order` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
-  `show` tinyint(1) DEFAULT 0,
-  `mark` tinyint(1) DEFAULT 0,
+  `show` tinyint(1) DEFAULT '0',
+  `mark` tinyint(1) DEFAULT '0',
   `admin_note` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `province` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
   `district` varchar(5) CHARACTER SET utf8 DEFAULT NULL,
   `ward` varchar(5) CHARACTER SET utf8 DEFAULT NULL,
   `user_id` decimal(21,0) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT 0,
-  `view` tinyint(1) DEFAULT 1,
+  `status` tinyint(1) DEFAULT '0',
+  `view` tinyint(1) DEFAULT '1',
   `code` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   `address2` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `startplaces` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
@@ -1218,7 +1191,7 @@ INSERT INTO `order_item` (`id`, `order_id`, `item_id`, `count`, `price`, `t_opti
 CREATE TABLE `places` (
   `id` int(11) NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
@@ -1255,33 +1228,33 @@ CREATE TABLE `product` (
   `focus` tinyint(1) DEFAULT NULL,
   `coupon` tinyint(1) DEFAULT NULL,
   `view` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT 1,
+  `active` tinyint(1) DEFAULT '1',
   `price` int(11) DEFAULT NULL,
   `price_sale` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description_seo` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `description_seo` text COLLATE utf8_unicode_ci,
   `location` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `keyword_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `detail` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `note` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `like` int(11) DEFAULT 0,
-  `order` decimal(21,0) DEFAULT 0,
+  `detail` text COLLATE utf8_unicode_ci,
+  `note` text COLLATE utf8_unicode_ci,
+  `like` int(11) DEFAULT '0',
+  `order` decimal(21,0) DEFAULT '0',
   `category_id` int(11) DEFAULT NULL,
-  `caption_1` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `caption_2` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `caption_1` text COLLATE utf8_unicode_ci,
+  `caption_2` text COLLATE utf8_unicode_ci,
   `locale` int(11) DEFAULT NULL,
-  `bought` int(11) DEFAULT 0,
-  `dksudung` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bought` int(11) DEFAULT '0',
+  `dksudung` text COLLATE utf8_unicode_ci,
   `sort` int(10) DEFAULT NULL,
-  `quantity` int(11) DEFAULT 0,
-  `counter` int(11) DEFAULT 0,
+  `quantity` int(11) DEFAULT '0',
+  `counter` int(11) DEFAULT '0',
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT 'vi',
   `destination` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time` int(8) DEFAULT NULL,
-  `tags` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tags` text COLLATE utf8_unicode_ci,
   `pro_dir` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `multi_image` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `multi_image` text COLLATE utf8_unicode_ci,
   `img_dir` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `quaranty` tinyint(3) DEFAULT NULL,
@@ -1301,7 +1274,7 @@ CREATE TABLE `product` (
   `order_qty` int(11) DEFAULT NULL,
   `product_hangsx` int(11) DEFAULT NULL,
   `hangsx_id` int(11) DEFAULT NULL,
-  `caption_3` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `caption_3` text COLLATE utf8_unicode_ci,
   `downloaded` int(11) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
   `detric` int(11) DEFAULT NULL,
@@ -1370,16 +1343,16 @@ CREATE TABLE `product_brand` (
   `name` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `image` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `alias` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `women` tinyint(1) DEFAULT NULL,
   `men` tinyint(1) DEFAULT NULL,
   `focus` tinyint(1) DEFAULT NULL,
   `title_seo` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `description_seo` text CHARACTER SET utf8 DEFAULT NULL,
-  `keyword` text CHARACTER SET utf8 DEFAULT NULL,
+  `description_seo` text CHARACTER SET utf8,
+  `keyword` text CHARACTER SET utf8,
   `sort` int(11) DEFAULT NULL,
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT 1,
+  `gender` tinyint(1) DEFAULT '1',
   `view` tinyint(1) DEFAULT NULL,
   `home` tinyint(1) DEFAULT NULL,
   `hot` tinyint(1) DEFAULT NULL
@@ -1405,11 +1378,11 @@ CREATE TABLE `product_category` (
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `description_seo` text CHARACTER SET utf8 DEFAULT NULL,
+  `description_seo` text CHARACTER SET utf8,
   `image` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `alias` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `home` tinyint(1) DEFAULT NULL,
   `sort` int(3) DEFAULT NULL,
   `hot` tinyint(1) DEFAULT NULL,
@@ -1425,14 +1398,11 @@ CREATE TABLE `product_category` (
 --
 
 INSERT INTO `product_category` (`id`, `user`, `name`, `title_seo`, `keyword_seo`, `description_seo`, `image`, `alias`, `parent_id`, `description`, `home`, `sort`, `hot`, `coupon`, `focus`, `lang`, `gender`, `banner`) VALUES
-(83, NULL, 'Giảm Cân - Chăm sóc tóc chuyên sâu', '', '', '', 'upload/img/category/img-1801.PNG', 'giam-can-cham-soc-toc-chuyen-sau', 0, '', 1, 9, NULL, NULL, NULL, 'vi', NULL, NULL),
-(103, NULL, 'Nano Curcumin - Ung Thư - Tỏi đen HVQY', '', '', '', 'upload/img/category/31f73ab791bf168bf92795b2b50ae5da.jpg', 'nano-curcumin-ung-thu-toi-den-hvqy', 0, '', 1, 10, NULL, NULL, NULL, 'vi', NULL, NULL),
-(105, NULL, 'Tỏi đen Học Viện Quân Y', '', '', '', NULL, 'toi-den-hoc-vien-quan-y', 0, '', 0, 3, NULL, NULL, NULL, 'vi', NULL, NULL),
-(106, NULL, 'Xương khớp - Tiểu đường -Dạ dày - Thải Độc', '', '', '', NULL, 'xuong-khop-tieu-duong-da-day-thai-doc', 0, '', 1, 8, NULL, NULL, NULL, 'vi', NULL, NULL),
-(107, NULL, 'Mỹ phẩm - Làm đẹp', '', '', '', NULL, 'my-pham-lam-dep', 0, '', 0, 3, NULL, NULL, NULL, 'vi', NULL, NULL),
-(108, NULL, 'Chăm sóc tóc chuyên sâu ', '', '', '', 'upload/img/category/vien-moc-toc-strong-hair-hoc-vien-quan-y-hop-30-vien-150.jpg', 'cham-soc-toc-chuyen-sau', 0, '', 0, 2, NULL, NULL, NULL, 'vi', NULL, NULL),
-(109, NULL, 'TRÀ - An Thần ngủ ngon ', '', '', '', NULL, 'tra-an-than-ngu-ngon', 0, '', 1, 6, NULL, NULL, NULL, 'vi', NULL, NULL),
-(110, NULL, 'Mẹ và Bé - Mỹ phẩm ', '', '', '', NULL, 'me-va-be-my-pham', 0, '', 1, 7, NULL, NULL, NULL, 'vi', NULL, NULL);
+(103, NULL, 'Chương trình đạo tạo', '', '', '', 'upload/img/category/img-intro3.png', 'chuong-trinh-dao-tao', 0, '<p>Với ch&uacute;ng t&ocirc;i, việc học Tiếng Anh kh&ocirc;ng chỉ dừng lại ở việc kh&aacute;m ph&aacute; một ng&ocirc;n ngữ m&agrave; c&ograve;n l&agrave; m&ocirc;i trường trau dồi kỹ năng sống v&agrave; gi&uacute;p bạn kết nối thế giới bằng phương ph&aacute;p học ngoại ngữ ho&agrave;n to&agrave;n mới chỉ c&oacute; tại EFA. đầu tốt đẹp cho tương lai</p>\r\n', 1, 10, NULL, NULL, NULL, 'vi', NULL, NULL),
+(111, NULL, 'Tiếng anh mẫu giáo', '', '', '', 'upload/img/category/dv1.png', 'tieng-anh-mau-giao', 103, '<p>M&ocirc;i trường học tiếng Anh ho&agrave;n hảo theo nhu cầu v&agrave; khả năng tiếp thu của b&eacute; một c&aacute;ch tự nhi&ecirc;n: Học m&agrave; chơi, chơi m&agrave; học th&ocirc;ng qua c&acirc;u chuyện, tranh ảnh, b&agrave;i h&aacute;t v&agrave; những nh&acirc;n vật hoạt h&igrave;nh.</p>\r\n', 1, 11, NULL, NULL, NULL, 'vi', NULL, NULL),
+(112, NULL, 'Tiếng anh thiếu nhi', '', '', '', 'upload/img/category/dv11.png', 'tieng-anh-thieu-nhi', 103, '<p>M&ocirc;i trường học tiếng Anh ho&agrave;n hảo theo nhu cầu v&agrave; khả năng tiếp thu của b&eacute; một c&aacute;ch tự nhi&ecirc;n: Học m&agrave; chơi, chơi m&agrave; học th&ocirc;ng qua c&acirc;u chuyện, tranh ảnh, b&agrave;i h&aacute;t v&agrave; những nh&acirc;n vật hoạt h&igrave;nh.</p>\r\n', 1, 12, NULL, NULL, NULL, 'vi', NULL, NULL),
+(113, NULL, 'Tiếng anh thiếu niên', '', '', '', 'upload/img/category/dv12.png', 'tieng-anh-thieu-nien', 103, '<p>M&ocirc;i trường học tiếng Anh ho&agrave;n hảo theo nhu cầu v&agrave; khả năng tiếp thu của b&eacute; một c&aacute;ch tự nhi&ecirc;n: Học m&agrave; chơi, chơi m&agrave; học th&ocirc;ng qua c&acirc;u chuyện, tranh ảnh, b&agrave;i h&aacute;t v&agrave; những nh&acirc;n vật hoạt h&igrave;nh.</p>\r\n', 1, 13, NULL, NULL, NULL, 'vi', NULL, NULL),
+(114, NULL, 'Tiếng anh giao tiếp', '', '', '', 'upload/img/category/dv13.png', 'tieng-anh-giao-tiep', 103, '<p>M&ocirc;i trường học tiếng Anh ho&agrave;n hảo theo nhu cầu v&agrave; khả năng tiếp thu của b&eacute; một c&aacute;ch tự nhi&ecirc;n: Học m&agrave; chơi, chơi m&agrave; học th&ocirc;ng qua c&acirc;u chuyện, tranh ảnh, b&agrave;i h&aacute;t v&agrave; những nh&acirc;n vật hoạt h&igrave;nh.</p>\r\n', 1, 14, NULL, NULL, NULL, 'vi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1517,7 +1487,7 @@ CREATE TABLE `product_locale` (
   `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(70) CHARACTER SET utf8 DEFAULT NULL,
   `sort` tinyint(1) DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL,
   `alias` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1552,7 +1522,7 @@ CREATE TABLE `product_old` (
   `keyword` text COLLATE utf8_unicode_ci NOT NULL,
   `detail` text COLLATE utf8_unicode_ci NOT NULL,
   `note` text COLLATE utf8_unicode_ci NOT NULL,
-  `like` int(11) NOT NULL DEFAULT 0,
+  `like` int(11) NOT NULL DEFAULT '0',
   `origin` varchar(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `color` varchar(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `size` varchar(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
@@ -1630,13 +1600,7 @@ CREATE TABLE `product_to_brand` (
 --
 
 INSERT INTO `product_to_brand` (`brand_id`, `id_category`) VALUES
-(39, 109),
-(39, 108),
-(39, 107),
-(39, 106),
-(39, 83),
-(39, 103),
-(39, 105);
+(39, 103);
 
 -- --------------------------------------------------------
 
@@ -1815,7 +1779,7 @@ CREATE TABLE `province` (
   `id` int(11) NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `price` int(11) DEFAULT 0,
+  `price` int(11) DEFAULT '0',
   `sort` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
@@ -1899,7 +1863,7 @@ CREATE TABLE `province_copy` (
   `name` varchar(100) NOT NULL,
   `type` varchar(30) NOT NULL,
   `alias` varchar(100) DEFAULT NULL,
-  `view` tinyint(1) DEFAULT 0
+  `view` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2018,20 +1982,20 @@ CREATE TABLE `pucharse` (
   `price` int(11) DEFAULT NULL,
   `pay_ncc` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
-  `note` text CHARACTER SET utf8 DEFAULT NULL,
+  `note` text CHARACTER SET utf8,
   `date` char(30) COLLATE utf8_bin DEFAULT NULL,
   `time` char(20) COLLATE utf8_bin DEFAULT NULL,
   `username` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `count` int(11) DEFAULT NULL,
   `total_pay` int(11) DEFAULT NULL,
-  `type` tinyint(4) DEFAULT 0 COMMENT '0 : Hoá Đơn Nhập Hàng / 1 : hoá đơn Trả Hàng',
-  `return_total` int(11) DEFAULT 0 COMMENT 'tổng số tiền NCC cần trả lại',
-  `return_payted` int(11) DEFAULT 0 COMMENT 'Số tiền NCC đã trả ',
-  `return_pucharse` int(11) DEFAULT 0 COMMENT 'mã đơn nhập hàng gốc',
-  `return_sale` int(11) DEFAULT 0 COMMENT 'Số Tiền GIảm Giá ',
-  `debt` float DEFAULT 0,
-  `nkd` int(11) DEFAULT 0,
-  `nkc` int(11) DEFAULT 0
+  `type` tinyint(4) DEFAULT '0' COMMENT '0 : Hoá Đơn Nhập Hàng / 1 : hoá đơn Trả Hàng',
+  `return_total` int(11) DEFAULT '0' COMMENT 'tổng số tiền NCC cần trả lại',
+  `return_payted` int(11) DEFAULT '0' COMMENT 'Số tiền NCC đã trả ',
+  `return_pucharse` int(11) DEFAULT '0' COMMENT 'mã đơn nhập hàng gốc',
+  `return_sale` int(11) DEFAULT '0' COMMENT 'Số Tiền GIảm Giá ',
+  `debt` float DEFAULT '0',
+  `nkd` int(11) DEFAULT '0',
+  `nkc` int(11) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -2054,7 +2018,7 @@ CREATE TABLE `pucharse_detail` (
   `sale` int(11) DEFAULT NULL COMMENT 'giảm giá sản phẩm khi trả hàng',
   `product_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `type` int(11) DEFAULT 0 COMMENT '0 : nhập hàng, 1 : trả hàng'
+  `type` int(11) DEFAULT '0' COMMENT '0 : nhập hàng, 1 : trả hàng'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -2195,7 +2159,7 @@ INSERT INTO `p_images` (`id`, `name`, `id_item`, `image`, `url`, `link`, `sort`)
 CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
   `id_sanpham` int(11) DEFAULT NULL,
-  `comment` text CHARACTER SET utf8 DEFAULT NULL,
+  `comment` text CHARACTER SET utf8,
   `flg` int(11) DEFAULT NULL,
   `reply` int(11) DEFAULT NULL,
   `review` tinyint(1) DEFAULT NULL,
@@ -2233,27 +2197,27 @@ CREATE TABLE `raovat` (
   `home` tinyint(1) DEFAULT NULL,
   `focus` tinyint(1) DEFAULT NULL,
   `view` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT 1,
+  `active` tinyint(1) DEFAULT '1',
   `price` int(11) DEFAULT NULL,
   `price_sale` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description_seo` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `description_seo` text COLLATE utf8_unicode_ci,
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `keyword_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `detail` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `note` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `detail` text COLLATE utf8_unicode_ci,
+  `note` text COLLATE utf8_unicode_ci,
   `category_id` int(11) DEFAULT NULL,
-  `caption_1` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `caption_2` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `caption_1` text COLLATE utf8_unicode_ci,
+  `caption_2` text COLLATE utf8_unicode_ci,
   `locale` int(11) DEFAULT NULL,
   `sort` int(10) DEFAULT NULL,
-  `quantity` int(11) DEFAULT 0,
+  `quantity` int(11) DEFAULT '0',
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT 'vi',
   `caption_3` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time` int(8) DEFAULT NULL,
-  `tags` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tags` text COLLATE utf8_unicode_ci,
   `raovat_dir` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `multi_image` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `multi_image` text COLLATE utf8_unicode_ci,
   `img_dir` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `tinhtrang` tinyint(1) DEFAULT NULL,
@@ -2291,14 +2255,14 @@ CREATE TABLE `raovat_category` (
   `alias` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `parent_id` int(11) NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `home` tinyint(1) DEFAULT 0,
-  `sort` int(3) DEFAULT 0,
-  `hot` tinyint(1) DEFAULT 0,
-  `focus` tinyint(1) DEFAULT 0,
+  `home` tinyint(1) DEFAULT '0',
+  `sort` int(3) DEFAULT '0',
+  `hot` tinyint(1) DEFAULT '0',
+  `focus` tinyint(1) DEFAULT '0',
   `lang` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `description_seo` text CHARACTER SET utf8 DEFAULT NULL
+  `description_seo` text CHARACTER SET utf8
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -2391,14 +2355,14 @@ INSERT INTO `raovat_to_category` (`id`, `id_raovat`, `id_category`) VALUES
 
 CREATE TABLE `resources` (
   `id` int(11) NOT NULL,
-  `parent_id` int(11) DEFAULT 0,
+  `parent_id` int(11) DEFAULT '0',
   `resource` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `description` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `sort` int(11) DEFAULT 0,
+  `sort` int(11) DEFAULT '0',
   `icon` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `alias` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `active` int(1) DEFAULT 0
+  `active` int(1) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -2583,14 +2547,14 @@ CREATE TABLE `site_log` (
   `site_log_id` int(10) UNSIGNED NOT NULL,
   `no_of_visits` int(10) UNSIGNED DEFAULT NULL,
   `ip_address` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
-  `requested_url` tinytext CHARACTER SET utf8 DEFAULT NULL,
-  `referer_page` tinytext CHARACTER SET utf8 DEFAULT NULL,
-  `page_name` tinytext CHARACTER SET utf8 DEFAULT NULL,
-  `query_string` tinytext CHARACTER SET utf8 DEFAULT NULL,
-  `user_agent` tinytext CHARACTER SET utf8 DEFAULT NULL,
-  `is_unique` tinyint(1) DEFAULT 0,
-  `access_date` timestamp NULL DEFAULT current_timestamp(),
-  `visits_count` int(11) DEFAULT 0
+  `requested_url` tinytext CHARACTER SET utf8,
+  `referer_page` tinytext CHARACTER SET utf8,
+  `page_name` tinytext CHARACTER SET utf8,
+  `query_string` tinytext CHARACTER SET utf8,
+  `user_agent` tinytext CHARACTER SET utf8,
+  `is_unique` tinyint(1) DEFAULT '0',
+  `access_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `visits_count` int(11) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -3019,7 +2983,204 @@ INSERT INTO `site_log` (`site_log_id`, `no_of_visits`, `ip_address`, `requested_
 (16748, 1, '123.16.13.3', '/assets/css/front_end/img/ko.png', 'http://thaoduocquany103.com/vnsadmin', 'assets/css', 'front_end/img/ko.png', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 03:06:38', 0),
 (16745, 1, '123.16.13.3', '/assets/css/front_end/img/vn.png', 'http://thaoduocquany103.com/vnsadmin', 'assets/css', 'front_end/img/vn.png', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 03:06:37', 0),
 (16747, 1, '123.16.13.3', '/assets/css/front_end/img/ja.png', 'http://thaoduocquany103.com/vnsadmin', 'assets/css', 'front_end/img/ja.png', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 03:06:38', 0),
-(16746, 1, '123.16.13.3', '/assets/css/front_end/img/en.png', 'http://thaoduocquany103.com/vnsadmin', 'assets/css', 'front_end/img/en.png', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 03:06:38', 0);
+(16746, 1, '123.16.13.3', '/assets/css/front_end/img/en.png', 'http://thaoduocquany103.com/vnsadmin', 'assets/css', 'front_end/img/en.png', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 03:06:38', 0),
+(17089, NULL, '::1', '/vnsoft_trungtamtienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 14:08:21', 1),
+(17090, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:31:23', 0),
+(17091, 1, '::1', '/vnsoft_tienganh/vnsadmin', '', 'defaults/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:33:11', 0),
+(17092, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:34:21', 0),
+(17093, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/admin/site_option', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:40:43', 0),
+(17094, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:41:21', 0),
+(17095, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/325', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:42:41', 0),
+(17096, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:42:50', 0),
+(17097, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/324', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:42:52', 0),
+(17098, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:42:56', 0),
+(17099, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:44:01', 0),
+(17100, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/admin/site_option', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:46:48', 0),
+(17101, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/addbanner', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/addbanner', 'ddbanner', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:10', 0),
+(17102, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/addbanner', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:19', 0),
+(17103, 1, '::1', '/vnsoft_tienganh/', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:19', 0),
+(17104, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/delete/326', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/delete', 'd/delete/326', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:22', 0),
+(17105, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:22', 0),
+(17106, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/325', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:38', 0),
+(17107, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:47:42', 0),
+(17108, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/325', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:48:56', 0),
+(17109, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:00', 0),
+(17110, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/325', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:28', 0),
+(17111, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/325', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:32', 0),
+(17112, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/324', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:34', 0),
+(17113, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:38', 0),
+(17114, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:39', 0),
+(17115, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:45', 0),
+(17116, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'imageupload/edit', 'oad/edit/324', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:48', 0),
+(17117, 1, '::1', '/vnsoft_tienganh/vnsadmin/imageupload/banners', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/edit/324', 'imageupload/banners', '/banners', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:53', 0),
+(17118, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:49:55', 0),
+(17119, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/imageupload/banners', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:23', 0),
+(17120, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/108', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/108', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:27', 0),
+(17121, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:27', 0),
+(17122, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/107', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/107', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:29', 0),
+(17123, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:29', 0),
+(17124, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/105', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/105', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:30', 0),
+(17125, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:30', 0),
+(17126, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/109', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/109', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:31', 0),
+(17127, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:31', 0),
+(17128, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/110', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/110', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:31', 0),
+(17129, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:31', 0),
+(17130, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/106', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/106', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:32', 0),
+(17131, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:32', 0),
+(17132, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/deletecategory/83', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/deletecategory', 'category/83', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:33', 0),
+(17133, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:33', 0),
+(17134, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/103', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/103', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:52:35', 0),
+(17135, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/103', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:53:48', 0),
+(17136, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/103', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/103', 'product/cat_edit', 'cat_edit/103', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:53:48', 0),
+(17137, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/103', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:53:48', 0),
+(17138, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:02', 0),
+(17139, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkAdd', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'alias/checkAdd', 'checkAdd', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:45', 0),
+(17140, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:45', 0),
+(17141, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:45', 0),
+(17142, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/111', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:48', 0),
+(17143, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:53', 0),
+(17144, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'product/cat_edit', 'cat_edit/111', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:53', 0),
+(17145, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:54:53', 0),
+(17146, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:08', 0),
+(17147, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkAdd', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'alias/checkAdd', 'checkAdd', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:24', 0),
+(17148, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:24', 0),
+(17149, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:24', 0),
+(17150, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:36', 0),
+(17151, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkAdd', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'alias/checkAdd', 'checkAdd', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:46', 0),
+(17152, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:46', 0),
+(17153, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:55:46', 0),
+(17154, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/113', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:02', 0),
+(17155, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:05', 0),
+(17156, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'product/cat_edit', 'cat_edit/113', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:05', 0),
+(17157, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:05', 0),
+(17158, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:08', 0),
+(17159, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkAdd', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'alias/checkAdd', 'checkAdd', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:21', 0),
+(17160, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_add', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/cat_add', '/cat_add', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:21', 0),
+(17161, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_add', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:21', 0),
+(17162, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:33', 0),
+(17163, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/deletecategory/17', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/deletecategory', 'category/17', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:37', 0),
+(17164, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:37', 0),
+(17165, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/deletecategory/19', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/deletecategory', 'category/19', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:38', 0),
+(17166, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:38', 0),
+(17167, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/deletecategory/20', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/deletecategory', 'category/20', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:39', 0),
+(17168, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:39', 0),
+(17169, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/deletecategory/21', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/deletecategory', 'category/21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:39', 0),
+(17170, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:39', 0),
+(17171, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/deletecategory/14', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/deletecategory', 'category/14', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:40', 0),
+(17172, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:40', 0),
+(17173, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/cat_edit/15', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/cat_edit', 'cat_edit/15', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:41', 0),
+(17174, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/news/cat_edit/15', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:44', 0),
+(17175, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/cat_edit/15', 'http://localhost/vnsoft_tienganh/vnsadmin/news/cat_edit/15', 'news/cat_edit', 'cat_edit/15', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:45', 0),
+(17176, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/cat_edit/15', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:45', 0),
+(17177, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:54', 0),
+(17178, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/delete/27', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/delete', 's/delete/27', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:59', 0),
+(17179, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:56:59', 0),
+(17180, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/delete/32', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/delete', 's/delete/32', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:00', 0),
+(17181, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:00', 0),
+(17182, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/29', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/edit', 'ews/edit/29', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:02', 0);
+INSERT INTO `site_log` (`site_log_id`, `no_of_visits`, `ip_address`, `requested_url`, `referer_page`, `page_name`, `query_string`, `user_agent`, `is_unique`, `access_date`, `visits_count`) VALUES
+(17183, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/29', 'alias/checkEdit', 'heckEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:15', 0),
+(17184, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/29', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/29', 'news/edit', 'ews/edit/29', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:16', 0),
+(17185, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/29', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:16', 0),
+(17186, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/28', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/edit', 'ews/edit/28', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:20', 0),
+(17187, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/28', 'alias/checkEdit', 'heckEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:27', 0),
+(17188, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/28', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/28', 'news/edit', 'ews/edit/28', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:27', 0),
+(17189, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/28', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:27', 0),
+(17190, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/30', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/edit', 'ews/edit/30', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:29', 0),
+(17191, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/30', 'alias/checkEdit', 'heckEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:36', 0),
+(17192, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/30', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/30', 'news/edit', 'ews/edit/30', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:36', 0),
+(17193, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/30', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:36', 0),
+(17194, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/31', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'news/edit', 'ews/edit/31', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:39', 0),
+(17195, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/31', 'alias/checkEdit', 'heckEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:45', 0),
+(17196, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/edit/31', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/31', 'news/edit', 'ews/edit/31', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:45', 0),
+(17197, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/edit/31', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:57:45', 0),
+(17198, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 15:59:36', 0),
+(17199, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:03:10', 0),
+(17200, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:03:27', 0),
+(17201, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/114', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/114', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:03:33', 0),
+(17202, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/114', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:47', 0),
+(17203, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/114', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/114', 'product/cat_edit', 'cat_edit/114', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:47', 0),
+(17204, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/114', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:47', 0),
+(17205, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/113', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:49', 0),
+(17206, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:51', 0),
+(17207, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'product/cat_edit', 'cat_edit/113', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:51', 0),
+(17208, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/113', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:51', 0),
+(17209, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/112', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/112', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:53', 0),
+(17210, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/112', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:54', 0),
+(17211, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/112', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/112', 'product/cat_edit', 'cat_edit/112', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:54', 0),
+(17212, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/112', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:54', 0),
+(17213, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'product/cat_edit', 'cat_edit/111', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:56', 0),
+(17214, 1, '::1', '/vnsoft_tienganh/vnsadmin/alias/checkCatEdit', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'alias/checkCatEdit', 'kCatEdit', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:57', 0),
+(17215, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'product/cat_edit', 'cat_edit/111', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:57', 0),
+(17216, 1, '::1', '/vnsoft_tienganh/vnsadmin/product/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/cat_edit/111', 'product/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:58', 0),
+(17217, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:04:59', 0),
+(17218, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:10:39', 0),
+(17219, 1, '::1', '/vnsoft_tienganh/ajax/ajax/update_fill', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'ajax/update_fill', 'fill', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:10:47', 0),
+(17220, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/categories', 'http://localhost/vnsoft_tienganh/vnsadmin/product/categories', 'news/categories', 'tegories', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:10:48', 0),
+(17221, 1, '::1', '/vnsoft_tienganh/vnsadmin/news/newslist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/categories', 'news/newslist', 'newslist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:11:09', 0),
+(17222, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:13:10', 0),
+(17223, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/news/newslist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:18:35', 0),
+(17224, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:18:35', 0),
+(17225, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/116?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/116', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:18:51', 0),
+(17226, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/116?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:09', 0),
+(17227, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:09', 0),
+(17228, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/117', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:15', 0),
+(17229, 1, '::1', '/vnsoft_tienganh/admin/menu/get_subcat', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'menu/get_subcat', 'ubcat', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:25', 0),
+(17230, 1, '::1', '/vnsoft_tienganh/admin/menu/cate_show/products/vi', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'menu/cate_show', '_show/products/vi', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:25', 0),
+(17231, 1, '::1', '/vnsoft_tienganh/admin/menu/get_iditem', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'menu/get_iditem', 'ditem', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:25', 0),
+(17232, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'menu/edit', 'enu/edit/117', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:27', 0),
+(17233, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/117?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:27', 0),
+(17234, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:27', 0),
+(17235, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/delete/130', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/delete', 'u/delete/130', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:31', 0),
+(17236, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:31', 0),
+(17237, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:32', 0),
+(17238, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/delete/129', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/delete', 'u/delete/129', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:33', 0),
+(17239, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:33', 0),
+(17240, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:34', 0),
+(17241, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/delete/137', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/delete', 'u/delete/137', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:36', 0),
+(17242, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:37', 0),
+(17243, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:37', 0),
+(17244, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/delete/136', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/delete', 'u/delete/136', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:38', 0),
+(17245, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:38', 0),
+(17246, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:39', 0),
+(17247, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/delete/135', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/delete', 'u/delete/135', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:41', 0),
+(17248, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:41', 0),
+(17249, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:41', 0),
+(17250, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/134?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/134', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:19:43', 0),
+(17251, 1, '::1', '/vnsoft_tienganh/admin/menu/get_iditem', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/134?p=main', 'menu/get_iditem', 'ditem', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:06', 0),
+(17252, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/134?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/134?p=main', 'menu/edit', 'enu/edit/134', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:09', 0),
+(17253, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/134?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:09', 0),
+(17254, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:10', 0),
+(17255, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/133?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/133', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:11', 0),
+(17256, 1, '::1', '/vnsoft_tienganh/admin/menu/get_iditem', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/133?p=main', 'menu/get_iditem', 'ditem', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:13', 0),
+(17257, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/133?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/133?p=main', 'menu/edit', 'enu/edit/133', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:21', 0),
+(17258, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/133?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:21', 0),
+(17259, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:21', 0),
+(17260, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/132?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/132', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:23', 0),
+(17261, 1, '::1', '/vnsoft_tienganh/admin/menu/get_iditem', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/132?p=main', 'menu/get_iditem', 'ditem', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:25', 0),
+(17262, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/132?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/132?p=main', 'menu/edit', 'enu/edit/132', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:32', 0),
+(17263, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/132?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:32', 0),
+(17264, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:32', 0),
+(17265, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/131?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/131', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:34', 0),
+(17266, 1, '::1', '/vnsoft_tienganh/admin/menu/get_iditem', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/131?p=main', 'menu/get_iditem', 'ditem', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:36', 0),
+(17267, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/131?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/131?p=main', 'menu/edit', 'enu/edit/131', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:43', 0),
+(17268, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/131?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:43', 0),
+(17269, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:43', 0),
+(17270, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/118?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:49', 0),
+(17271, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/118?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:54', 0),
+(17272, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:54', 0),
+(17273, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/120?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/120', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:20:58', 0),
+(17274, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/120?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:06', 0),
+(17275, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:06', 0),
+(17276, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/edit/121?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/edit', 'enu/edit/121', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:12', 0),
+(17277, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/edit/121?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:21', 0),
+(17278, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:21', 0),
+(17279, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/addmenu?p=main', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/addmenu', '/addmenu', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:24', 0),
+(17280, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/addmenu?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:29', 0),
+(17281, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:29', 0),
+(17282, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/menulist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/addmenu?p=main', 'menu/menulist', 'menulist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:39', 0),
+(17283, 1, '::1', '/vnsoft_tienganh/vnsadmin/menu/savelist', 'http://localhost/vnsoft_tienganh/vnsadmin/menu/menulist', 'menu/savelist', 'savelist', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:39', 0),
+(17284, 1, '::1', '/vnsoft_tienganh/', '', 'home/index', '', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36', 0, '2018-11-12 16:21:41', 0);
 
 -- --------------------------------------------------------
 
@@ -3051,14 +3212,14 @@ CREATE TABLE `site_option` (
   `hotline1` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `hotline2` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `hotline3` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `address` text CHARACTER SET utf8 DEFAULT NULL,
+  `address` text CHARACTER SET utf8,
   `link_tt` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `favicon` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `company_name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `shipping` text CHARACTER SET utf8 DEFAULT NULL,
-  `site_promo` text CHARACTER SET utf8 DEFAULT NULL,
-  `thanhtoan_tienmat` text CHARACTER SET utf8 DEFAULT NULL,
-  `thanhtoan_chuyenkhoan` text CHARACTER SET utf8 DEFAULT NULL,
+  `shipping` text CHARACTER SET utf8,
+  `site_promo` text CHARACTER SET utf8,
+  `thanhtoan_tienmat` text CHARACTER SET utf8,
+  `thanhtoan_chuyenkhoan` text CHARACTER SET utf8,
   `hdfMap` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `map_title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `map_adrdress` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -3069,7 +3230,7 @@ CREATE TABLE `site_option` (
   `link_youtube` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `link_fb` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `timeopen` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `chat` text CHARACTER SET utf8 DEFAULT NULL,
+  `chat` text CHARACTER SET utf8,
   `site_logo_footer` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `map_iframe` text CHARACTER SET utf8 NOT NULL,
   `input_text_1` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -3077,7 +3238,7 @@ CREATE TABLE `site_option` (
   `map_footer` text COLLATE utf8_unicode_ci NOT NULL,
   `config_pro` text COLLATE utf8_unicode_ci NOT NULL,
   `config_pro_content` text COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(3) UNSIGNED DEFAULT 1,
+  `active` tinyint(3) UNSIGNED DEFAULT '1',
   `future` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hanoi` int(11) NOT NULL,
   `tinhle` int(11) NOT NULL
@@ -3088,7 +3249,7 @@ CREATE TABLE `site_option` (
 --
 
 INSERT INTO `site_option` (`id`, `coppy_right`, `site_name`, `slogan`, `link_instagram`, `site_logo`, `site_title`, `site_title_en`, `site_keyword`, `site_keyword_en`, `site_description`, `link_sky`, `link_printer`, `link_linkedin`, `site_email`, `site_fanpage`, `site_video`, `WM_text`, `WM_color`, `WM_size`, `hotline1`, `hotline2`, `hotline3`, `address`, `link_tt`, `favicon`, `company_name`, `shipping`, `site_promo`, `thanhtoan_tienmat`, `thanhtoan_chuyenkhoan`, `hdfMap`, `map_title`, `map_adrdress`, `map_phone`, `dia_chi_timkiem`, `lang`, `link_gg`, `link_youtube`, `link_fb`, `timeopen`, `chat`, `site_logo_footer`, `map_iframe`, `input_text_1`, `domain`, `map_footer`, `config_pro`, `config_pro_content`, `active`, `future`, `hanoi`, `tinhle`) VALUES
-(1, NULL, 'Thảo Dược Quân Y 103.', NULL, NULL, 'upload/img/logo/logo_1.jpg', 'Thảo Dược Quân Y 103.', NULL, '', '0', '', NULL, '', '', 'ngocdung114@gmail.com', NULL, 'https://www.youtube.com/embed/ErKJTNfvx88', NULL, NULL, NULL, '0966.820.979', '0966.820.979', NULL, 'Chuyên cung cấp các sản phẩm Trà - Thuốc -Thực phẩm hỗ trợ chữa bệnh do Học Viện Quân Y nghiên cứu và sản xuất.', '', 'upload/img/logo/logo_12.jpg', NULL, '<p>Số 15 BT9 Khu đ&ocirc; thị Mới Văn Ph&uacute;, phường Ph&uacute; La, H&agrave; Đ&ocirc;ng, H&agrave; Nội.</p>\r\n', NULL, NULL, NULL, '(21.0137956, 105.76945469999998)', 'Công ty cổ phần dịch vụ & thương mại Thủ Đô', 'Số 58 Phố Duy Tân – Dịch Vọng Hậu – Cầu Giấy - HN', ' 0984086608', '42 Lê Quang đạo, Nam Từ Liêm', 'vi', '', 'https://www.youtube.com/embed/ErKJTNfvx88', 'https://www.facebook.com/vnsoft.net/', 'T2 - CN: 08:00 - 19:00', NULL, 'upload/img/logo/logo_11.jpg', '', NULL, '', '', '[]', '[{\"content\":\"\",\"name\":\"Chi ti\\u1ebft s\\u1ea3n ph\\u1ea9m\",\"type\":\"textarea\",\"sort\":\"\"},{\"content\":\"\",\"name\":\"M\\u00e3 s\\u1ea3n ph\\u1ea9m\",\"type\":\"text\",\"sort\":\"\"}]', 1, NULL, 22000, 30000),
+(1, NULL, 'Thảo Dược Quân Y 103.', NULL, NULL, 'upload/img/logo/logo11.png', 'Thảo Dược Quân Y 103.', NULL, '', '0', '', NULL, '', '', 'ngocdung114@gmail.com', NULL, '', NULL, NULL, NULL, '0912 345 678', '0943 465 632', NULL, 'A12-TT9 Khu đô thị Văn Quán - Hà Đông - Hà Nội', '', 'upload/img/logo/logo13.png', NULL, '<p>Cơ sở 1: A12-TT9 Khu đ&ocirc; thị Văn Qu&aacute;n - H&agrave; Đ&ocirc;ng - H&agrave; Nội<br />\r\nHotline: 0243 3523 232 - 0943 465 632</p>\r\n\r\n<p>Cơ sở 2: LK319 DV7 Khu H&agrave;ng B&egrave; - Kiến Hưng - H&agrave; Đ&ocirc;ng - H&agrave; Nội<br />\r\nHotline: 0934 684 328 - 036 818 5887</p>\r\n', NULL, NULL, NULL, '(21.0137956, 105.76945469999998)', 'Công ty cổ phần dịch vụ & thương mại Thủ Đô', 'Số 58 Phố Duy Tân – Dịch Vọng Hậu – Cầu Giấy - HN', ' 0984086608', '42 Lê Quang đạo, Nam Từ Liêm', 'vi', '', 'https://www.youtube.com/embed/ErKJTNfvx88', 'https://www.facebook.com/vnsoft.net/', '', NULL, 'upload/img/logo/logo12.png', '', NULL, '', '', '[]', '[{\"content\":\"\",\"name\":\"Chi ti\\u1ebft s\\u1ea3n ph\\u1ea9m\",\"type\":\"textarea\",\"sort\":\"\"},{\"content\":\"\",\"name\":\"M\\u00e3 s\\u1ea3n ph\\u1ea9m\",\"type\":\"text\",\"sort\":\"\"}]', 1, NULL, 22000, 30000),
 (2, '', 'JSC polygon media', '', NULL, 'upload/img/logo/logo4.png', '', NULL, '', '0', '', NULL, NULL, NULL, 'hanhnh@polygonmedia.vn', NULL, 'uI2wcf05wq0', NULL, NULL, NULL, '', NULL, NULL, '', '', 'upload/img/logo/logo6.png', NULL, '', NULL, NULL, NULL, '(21.0218044, 105.79087200000004)', 'Công ty', '', '', 'Yên hòa', 'en', '', '', '', '', NULL, 'upload/img/logo/logo5.png', '', NULL, '', '', '', '', 1, '', 0, 0),
 (3, '0', '1', '0', '', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '0', '1', '0', '0', 0, '1', '1', '0', '1', '1', '1', '1', '1', '0', '1', '1', '1', '1', '1', '1', '1', 'config', '1', '1', '1', '1', '0', '1', '0', '0', '0', '0', '1', '1', 0, NULL, 0, 0),
 (4, 'coppy right', 'tên đơn vị', 'slogan', 'Instagram', NULL, 'Tiêu đề website', NULL, NULL, NULL, NULL, 'link skype', 'link VKontakle', 'link vimeo', NULL, 'fanpage facebook', 'Video (Youtube)', 'Chữ Nổi Warter Mark', 'Màu Chữ (Hex Color VD : #ed1c2', 1, 'điện thoại', 'fax', 'điên thoại bàn', 'địa chỉ', 'link tweter', NULL, NULL, 'giao hàng', 'khuyến mại', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'conf_text', 'link google', 'Link youtube', 'Link facebook', 'thời gian mở cửa', 'mã chát online', 'logo chân trang', 'Mã nhúng bản đồ chân trang', 'mã số thuê', 'tên miền', 'mã nhúng javascript', '', '', 0, NULL, 0, 0),
@@ -3105,18 +3266,18 @@ CREATE TABLE `staticpage` (
   `id` int(11) NOT NULL,
   `name` varchar(55) COLLATE utf8_unicode_ci DEFAULT NULL,
   `alias` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `content` text COLLATE utf8_unicode_ci,
   `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` char(10) COLLATE utf8_unicode_ci DEFAULT '1',
-  `home` tinyint(1) DEFAULT 0,
+  `home` tinyint(1) DEFAULT '0',
   `hot` tinyint(1) DEFAULT NULL,
   `focus` tinyint(1) DEFAULT NULL,
-  `contact_page` tinyint(1) DEFAULT 0,
+  `contact_page` tinyint(1) DEFAULT '0',
   `title_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `keyword_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description_seo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `parent_id` int(11) DEFAULT 0,
+  `parent_id` int(11) DEFAULT '0',
   `page_footer` int(11) NOT NULL,
   `time` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -3146,10 +3307,10 @@ CREATE TABLE `stocks` (
   `id` int(11) UNSIGNED NOT NULL,
   `code` varchar(120) DEFAULT NULL,
   `note` varchar(255) DEFAULT NULL,
-  `total_value` bigint(20) DEFAULT 0 COMMENT 'số lượng thực tế',
-  `total_quantity` int(11) DEFAULT 0 COMMENT 'số lượng trên danh sách',
-  `price_up` int(11) DEFAULT 0 COMMENT 'tổng tiền chênh lệch tăng',
-  `price_down` int(11) DEFAULT 0 COMMENT 'Tổng tiền chênh lệch giảm',
+  `total_value` bigint(20) DEFAULT '0' COMMENT 'số lượng thực tế',
+  `total_quantity` int(11) DEFAULT '0' COMMENT 'số lượng trên danh sách',
+  `price_up` int(11) DEFAULT '0' COMMENT 'tổng tiền chênh lệch tăng',
+  `price_down` int(11) DEFAULT '0' COMMENT 'Tổng tiền chênh lệch giảm',
   `created` int(11) DEFAULT NULL,
   `updated` int(11) DEFAULT NULL,
   `user_create` int(11) DEFAULT NULL,
@@ -3209,7 +3370,7 @@ CREATE TABLE `supplier` (
   `ward` int(10) UNSIGNED DEFAULT NULL,
   `company` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `tax_code` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `note` text CHARACTER SET utf8 DEFAULT NULL,
+  `note` text CHARACTER SET utf8,
   `user_id` int(11) DEFAULT NULL,
   `payment` int(11) DEFAULT NULL,
   `date` char(30) COLLATE utf8_bin DEFAULT NULL,
@@ -3247,7 +3408,7 @@ CREATE TABLE `supplier_debt` (
   `type` tinyint(2) DEFAULT NULL,
   `date_time` int(11) DEFAULT NULL,
   `time_insert` int(11) DEFAULT NULL,
-  `note` text DEFAULT NULL
+  `note` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
@@ -3484,7 +3645,7 @@ INSERT INTO `thong_ke_online` (`id`, `access_date`, `today`) VALUES
 (128, 1541523600, 858),
 (129, 1541696400, 7),
 (130, 1541782800, 90),
-(131, 1541955600, 250);
+(131, 1541955600, 342);
 
 -- --------------------------------------------------------
 
@@ -3526,7 +3687,7 @@ CREATE TABLE `users` (
   `use_enddate` int(11) UNSIGNED DEFAULT NULL,
   `lastest_login` int(11) UNSIGNED DEFAULT NULL,
   `signup_date` int(11) DEFAULT NULL,
-  `lever` tinyint(1) DEFAULT 0,
+  `lever` tinyint(1) DEFAULT '0',
   `oauth_provider` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
@@ -3548,7 +3709,7 @@ CREATE TABLE `user_sms` (
   `smsid` varchar(254) CHARACTER SET utf8 DEFAULT NULL,
   `userid` int(11) NOT NULL,
   `phone` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `content` text CHARACTER SET utf8 DEFAULT NULL,
+  `content` text CHARACTER SET utf8,
   `result` int(11) NOT NULL,
   `count` int(11) DEFAULT NULL,
   `error` varchar(254) CHARACTER SET utf8 DEFAULT NULL,
@@ -3595,7 +3756,7 @@ CREATE TABLE `video` (
   `id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `description` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `link_video` text CHARACTER SET utf8 DEFAULT NULL,
+  `link_video` text CHARACTER SET utf8,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `description_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -3606,7 +3767,7 @@ CREATE TABLE `video` (
   `focus` tinyint(1) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   `image` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `active` tinyint(1) DEFAULT 1,
+  `active` tinyint(1) DEFAULT '1',
   `alias` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
   `view` int(11) DEFAULT NULL
@@ -3635,10 +3796,10 @@ CREATE TABLE `video_category` (
   `focus` tinyint(1) DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `title_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `description_seo` text CHARACTER SET utf8 DEFAULT NULL,
+  `description_seo` text CHARACTER SET utf8,
   `keyword_seo` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `lang` char(10) CHARACTER SET utf8 DEFAULT NULL,
-  `description` text CHARACTER SET utf8 DEFAULT NULL,
+  `description` text CHARACTER SET utf8,
   `parent_id` int(11) DEFAULT NULL,
   `time` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
@@ -4230,436 +4391,523 @@ ALTER TABLE `ward`
 --
 ALTER TABLE `access`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT cho bảng `alias`
 --
 ALTER TABLE `alias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=483;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=487;
+
 --
 -- AUTO_INCREMENT cho bảng `cashbook`
 --
 ALTER TABLE `cashbook`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `cashtype`
 --
 ALTER TABLE `cashtype`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `code_sale`
 --
 ALTER TABLE `code_sale`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
 --
 -- AUTO_INCREMENT cho bảng `comments_binhluan`
 --
 ALTER TABLE `comments_binhluan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT cho bảng `config_banner`
 --
 ALTER TABLE `config_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT cho bảng `config_checkpro`
 --
 ALTER TABLE `config_checkpro`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
 --
 -- AUTO_INCREMENT cho bảng `config_class`
 --
 ALTER TABLE `config_class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT cho bảng `config_menu`
 --
 ALTER TABLE `config_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT cho bảng `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
 -- AUTO_INCREMENT cho bảng `customer_debt`
 --
 ALTER TABLE `customer_debt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
 -- AUTO_INCREMENT cho bảng `debt_supplier`
 --
 ALTER TABLE `debt_supplier`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `district`
 --
 ALTER TABLE `district`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=698;
+
 --
 -- AUTO_INCREMENT cho bảng `document`
 --
 ALTER TABLE `document`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT cho bảng `emails`
 --
 ALTER TABLE `emails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=326;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+
 --
 -- AUTO_INCREMENT cho bảng `inuser`
 --
 ALTER TABLE `inuser`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT cho bảng `inuser_category`
 --
 ALTER TABLE `inuser_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
 -- AUTO_INCREMENT cho bảng `inuser_to_category`
 --
 ALTER TABLE `inuser_to_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
 --
 -- AUTO_INCREMENT cho bảng `invoices`
 --
 ALTER TABLE `invoices`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+
 --
 -- AUTO_INCREMENT cho bảng `invoices_detail`
 --
 ALTER TABLE `invoices_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
+
 --
 -- AUTO_INCREMENT cho bảng `khoanggia`
 --
 ALTER TABLE `khoanggia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT cho bảng `language`
 --
 ALTER TABLE `language`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT cho bảng `map_shopping`
 --
 ALTER TABLE `map_shopping`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT cho bảng `media`
 --
 ALTER TABLE `media`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT cho bảng `media_category`
 --
 ALTER TABLE `media_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT cho bảng `media_images`
 --
 ALTER TABLE `media_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+
 --
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
 --
 -- AUTO_INCREMENT cho bảng `news_category`
 --
 ALTER TABLE `news_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT cho bảng `news_to_category`
 --
 ALTER TABLE `news_to_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
 --
 -- AUTO_INCREMENT cho bảng `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT cho bảng `order_item`
 --
 ALTER TABLE `order_item`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
 -- AUTO_INCREMENT cho bảng `places`
 --
 ALTER TABLE `places`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
+
 --
 -- AUTO_INCREMENT cho bảng `product_brand`
 --
 ALTER TABLE `product_brand`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
 -- AUTO_INCREMENT cho bảng `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+
 --
 -- AUTO_INCREMENT cho bảng `product_color`
 --
 ALTER TABLE `product_color`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT cho bảng `product_hangsx`
 --
 ALTER TABLE `product_hangsx`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+
 --
 -- AUTO_INCREMENT cho bảng `product_img`
 --
 ALTER TABLE `product_img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `product_locale`
 --
 ALTER TABLE `product_locale`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT cho bảng `product_old`
 --
 ALTER TABLE `product_old`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `product_price`
 --
 ALTER TABLE `product_price`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT cho bảng `product_size`
 --
 ALTER TABLE `product_size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT cho bảng `product_tag`
 --
 ALTER TABLE `product_tag`
   MODIFY `product_tag_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `product_to_category`
 --
 ALTER TABLE `product_to_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=972;
+
 --
 -- AUTO_INCREMENT cho bảng `product_to_color`
 --
 ALTER TABLE `product_to_color`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+
 --
 -- AUTO_INCREMENT cho bảng `product_to_option`
 --
 ALTER TABLE `product_to_option`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `product_to_season`
 --
 ALTER TABLE `product_to_season`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `product_to_size`
 --
 ALTER TABLE `product_to_size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT cho bảng `project`
 --
 ALTER TABLE `project`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT cho bảng `province`
 --
 ALTER TABLE `province`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
 --
 -- AUTO_INCREMENT cho bảng `pro_size`
 --
 ALTER TABLE `pro_size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `pucharse`
 --
 ALTER TABLE `pucharse`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `pucharse_detail`
 --
 ALTER TABLE `pucharse_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `p_images`
 --
 ALTER TABLE `p_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+
 --
 -- AUTO_INCREMENT cho bảng `questions`
 --
 ALTER TABLE `questions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT cho bảng `raovat`
 --
 ALTER TABLE `raovat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT cho bảng `raovat_category`
 --
 ALTER TABLE `raovat_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
 --
 -- AUTO_INCREMENT cho bảng `raovat_images`
 --
 ALTER TABLE `raovat_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT cho bảng `raovat_tag`
 --
 ALTER TABLE `raovat_tag`
   MODIFY `raovat_tag_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `raovat_to_category`
 --
 ALTER TABLE `raovat_to_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT cho bảng `resources`
 --
 ALTER TABLE `resources`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+
 --
 -- AUTO_INCREMENT cho bảng `search_data`
 --
 ALTER TABLE `search_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT cho bảng `shipping`
 --
 ALTER TABLE `shipping`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT cho bảng `site_log`
 --
 ALTER TABLE `site_log`
-  MODIFY `site_log_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17089;
+  MODIFY `site_log_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17285;
+
 --
 -- AUTO_INCREMENT cho bảng `staticpage`
 --
 ALTER TABLE `staticpage`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
 --
 -- AUTO_INCREMENT cho bảng `stocks`
 --
 ALTER TABLE `stocks`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `stocks_detail`
 --
 ALTER TABLE `stocks_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `street`
 --
 ALTER TABLE `street`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `supplier`
 --
 ALTER TABLE `supplier`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT cho bảng `supplier_debt`
 --
 ALTER TABLE `supplier_debt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `support_online`
 --
 ALTER TABLE `support_online`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT cho bảng `tags`
 --
 ALTER TABLE `tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `tags_news`
 --
 ALTER TABLE `tags_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `tags_to_news`
 --
 ALTER TABLE `tags_to_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `tags_to_product`
 --
 ALTER TABLE `tags_to_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `tbl_xnt`
 --
 ALTER TABLE `tbl_xnt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+
 --
 -- AUTO_INCREMENT cho bảng `thong_ke_online`
 --
 ALTER TABLE `thong_ke_online`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=646;
+
 --
 -- AUTO_INCREMENT cho bảng `user_sms`
 --
 ALTER TABLE `user_sms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT cho bảng `video`
 --
 ALTER TABLE `video`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT cho bảng `video_category`
 --
 ALTER TABLE `video_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT cho bảng `ward`
 --
 ALTER TABLE `ward`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
