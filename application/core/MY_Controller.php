@@ -61,30 +61,8 @@
         {
             $data  = array();
             $data['count'] = $this->count_cart;
-            $data['product_cathot'] = $this->system_model->get_data('product_category',array('hot'=>'1','lang' => $this->language),
-                array('sort'=>''),1,5
-            );
-
-            $data['product_cate'] = $this->system_model->get_data('product_category',array('lang' => $this->language),
-                array('sort'=>''),1,5
-            );
-            $data['blkmenu_left']=$this->load->widget('blkmenu_left');
-            $data['search_data']=$this->f_homemodel->get_data('search_data',array(),
-                array('qty','desc'),4,0
-            );
-
-            $data['cate_all']=$this->f_homemodel->get_data('product_category',array(
-                'lang' => $this->language,
-                //'home' => 1
-            ));
-
-            $data['pages']=$this->f_homemodel->get_data('staticpage',
-                array(
-                    'lang' => $this->language,
-                    'home' => 1
-                ),
-                array('id','desc'),3,0
-            );
+            $data['blkmenu_top']=$this->load->widget('blkmenu_top');
+            $data['blksearch']=$this->load->widget('blksearch');
 
             if($show_slider==true){
                 $data['slide'] = $this->load->widget('slide');

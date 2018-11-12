@@ -33,18 +33,25 @@
     <meta name="twitter:image"
           content="<?= isset($seo['image']) && $seo['image'] != '' ? base_url($seo['image']) : base_url(@$this->option->site_logo); ?>"/>
     <!-- thay đổi css -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=vietnamese" rel="stylesheet">
-    <link rel="stylesheet" href="<?=site_url()?>assets/css/front_end/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?=site_url()?>assets/css/front_end/font-awesome.css" />
-    <link rel="stylesheet" href="<?=site_url()?>assets/css/front_end/menu-2.css" />
-    <link rel="stylesheet" type="text/css" href="<?=site_url()?>assets/css/front_end/owl.theme2.css">
-    <link rel="stylesheet" type="text/css" href="<?=site_url()?>assets/css/front_end/style.css">
-    <link rel="stylesheet" href="<?=site_url()?>assets/css/front_end/setmedia.css" />
-    <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/jquery-3.1.1.min.js"></script>
+    <link href="<?=site_url()?>assets/css/front_end/bootstrap.min.css" rel="stylesheet"/>
+    <link href="<?=site_url()?>assets/css/front_end/font-awesome.css" rel="stylesheet"/>
+    <link href="<?=site_url()?>assets/css/front_end/owl.carousel.min.css"rel="stylesheet">
+    <link href="<?=site_url()?>assets/css/front_end/owl.theme.default.min.css"rel="stylesheet">
+    <link href="<?=site_url()?>assets/css/front_end/search.css"rel="stylesheet">
+    <link href="<?=site_url()?>assets/css/front_end/menu-2.css" rel="stylesheet"/>
+    <link href="<?=site_url()?>assets/css/front_end/animate.css" rel="stylesheet"/>
+    <link href="<?=site_url()?>assets/css/front_end/style00.css" rel="stylesheet"/>
+    <link href="<?=site_url()?>assets/css/front_end/setmedia.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/owl.carousel.js"></script>
     <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/menu-2.js"></script>
-
-
+    <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/style-img.js"></script>
+    <script type="text/javascript" src="<?=site_url()?>assets/js/front_end/site/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -64,6 +71,7 @@
 
         gtag('config', 'UA-127731915-1');
     </script>
+
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -77,139 +85,83 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
-
-
 </head>
 <body >
 
-<header id="header">
-    <section class="qts_head_top">
-        <div class="menu_mb butt_mobile visible-xs visible-sm clearfix">
-            <button class="nav-toggle">
-                <div class="icon-menu">
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </div>
-            </button>
-            <div class="text-center">
-                <a href="<?= base_url()?>" title="<?= $this->option->site_name?>"><img class="img_logo_mb" src="<?= base_url($this->option->site_logo)?>" alt="<?= $this->option->site_name?>" /></a>
-            </div>
-        </div>
-        <!-- /menu_mb -->
-        <div class="clearfix clb-header visible-sm visible-xs"></div>
-        <div class="container hidden-xs hidden-sm">
-            <div class="row_pc">
-                <div class="fl-l top-left">
-                    <span class="hd-hot"><img src="<?= base_url()?>img/i-hot.png" alt="<?= $this->option->site_name?>"> <?= $this->option->slogan?> </span>
-                </div>
-                <div class="fl-r top-right">
-                    <div class="hd-tin">
 
-                        <?php $i=0; foreach ($menu_left as $left): $i++; ?>
-                            <a href="<?= base_url($left->url)?>" title="<?= $left->name?>">
-                                <i class="  <?php if ($i == 1){echo 'fa fa-book';}else{echo 'fa fa-gift';}?>"></i> <?= $left->name?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
+
+<div class="menu_mb butt_mobile visible-xs visible-sm clearfix">
+    <button class="nav-toggle">
+        <div class="icon-menu">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
         </div>
-    </section>
-    <div class="clearfix"></div>
-    <section class="qts_head_mid sticky-header">
+    </button>
+    <div class="text-center">
+        <a href="<?= base_url()?>"><img class="img_logo_mb" src="<?= base_url($this->option->site_logo)?>" alt="<?= $this->option->site_name?>"></a>
+    </div>
+</div><!-- /menu_mb -->
+<div class="clearfix clearfix-62 visible-sm visible-xs"></div>
+
+
+<header id="header">
+
+    <section class="sc_head_top clearfix">
         <div class="container">
             <div class="row_pc">
-                <div class="fl-l col-md-3 hidden-sm hidden-xs">
-                    <div class="row">
-                        <h2 class="logo_pc " style="text-align: center; padding-top: 15px">
-                            <a href="<?= base_url()?>" title="<?= $this->option->site_name?>" style="text-align: center"><img class="" src="<?= base_url($this->option->site_logo)?>" alt="<?= $this->option->site_name?>" /></a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="fl-l col-lg-6 col-md-4">
-                    <div class="rowe">
-                        <!-- <div class="name">
-                            <a href="">
-                                <h1 class="hidden-480"> </span>
-                            </a>
-                        </div> -->
-                        <form class="box_search validate" action="<?=base_url('tim-kiem')?>">
-                            <div class="input-group">
-                                <input type="text" class=" validate[required] form-control input_search" name="key" placeholder="Tìm kiếm">
-                                <input type="hidden" id="id_giatri2" name="id_cate_search" value="">
-                                    <span class="input-group-btn">
-                                        <button class="btn butt_search" type="submit">
-                                        </button>
-                                    </span>
-                            </div>
-                        </form>
-                        <p class="suggest hidden-md hidden-sm hidden-xs"><b>Từ khóa phổ biến</b></p>
-                        <div class="listSuggest hidden-md hidden-sm hidden-xs">
-                            <?php foreach ($search_data as $data): ?>
-                                <a href="<?= base_url()?>tim-kiem?key=<?= $data->name_search?>" title="tìm kiếm"><?= $data->name_search?></a>
-                            <?php endforeach; ?>
 
+                <div class="clearfix bd_head_top fadeInDown wow">
+
+                    <ul class="pull-left list_ct_hd hidden-xs">
+                        <li><a href="<?= base_url('lien-he')?>">Liên hệ</a></li>
+                        <li><a href="">Tuyển dụng</a></li>
+                        <li><a href="tel:<?= $this->option->hotline1?>">Hotline: <?= $this->option->hotline1?></a></li>
+                    </ul>
+
+                    <div class="pull-right hd_right">
+                        <div class="list_link_hd">
+                            <a href="" class="fa fa-facebook"></a>
+                            <a href="" class="fa fa-google-plus"></a>
+                            <a href="" class="fa fa-youtube-play"></a>
+                            <a href="" class="fa fa-twitter"></a>
+                            <a href="" class="fa fa-instagram"></a>
+                            <a href="" class="fa fa-linkedin"></a>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-lg-3 col-md-5">
-                    <div class="row_pc">
-                        <div class="fl-l cartt">
-                            <a href="<?= base_url('gio-hang')?>" title="giỏ hàng của bạn">
-                                    <span class="dib relative">
-                                        <img src="<?= base_url()?>img/i-cart.png" alt="giỏ hàng của bạn">
-                                        <span class="number"><?= $count?></span>
-                                    </span>
-                                giỏ hàng
-                            </a>
-                        </div>
-                        <div class="fl-l mid-right">
-                            <div class="fl-r hotline-mid">
-                                <?= $this->option->hotline1?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+
             </div>
         </div>
     </section>
-    <div class="after-fixed"></div>
-    <section class="qts_head_bot " id='sticky'>
-        <section class="sc_header_menu menu_bg hidden-lg hidden-md ">
-            <div class="container">
-                <div class="row">
-                    <div class="row_pc">
-                        <div class="col-md-12">
-                            <nav class="nav is-fixed " role="navigation">
-                                <div class="nav-container">
-                                    <?= $this->load->widget('blkmenu_top')?>
 
-                                </div>
-                            </nav>
+    <div class="clearfix"></div>
+
+    <section class="sc_head_bot sticky-header clearfix">
+
+        <div class="container">
+            <div class="row_pc">
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <div class="row">
+                        <h1 class="logo_pc"><a href="<?= base_url()?>"><img src="<?= base_url($this->option->site_logo)?>" alt="<?= $this->option->site_name?>"></a></h1>
+                    </div>
+                </div>
+                <div class="col-md-9 col-xs-12">
+                    <div class="row">
+                        <div class="group_menu_search clearfix">
+                            <div id="sb-search" class="sb-search search_box">
+                                <?= $blksearch?>
+                            </div>
+                            <div class="menu_main">
+                                <?= $blkmenu_top?>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="menu-pc hidden-sm hidden-xs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-180 col-md-3 p0 ">
-
-                        <?= $this->load->widget('blkdanhmuc')?>
-                    </div>
-                    <div class="col-lg-820 col-md-9 p0">
-                        <div class="policy">
-                            <?php $i=0; foreach ($pages as $page): $i++; ?>
-                                <a href="<?= base_url('page/'.$page->alias)?>" title="<?= $page->name?>" class="si nth<?= $i?>"><?= $page->name?></a>  
-                            <?php endforeach; ?>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </section>
 </header>
+<div class="clearfix"></div>

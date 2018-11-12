@@ -31,6 +31,9 @@ class Home extends MY_Controller
     public function index(){ //uh code ci3 k chay dc kieu kia cho nen phai viet lại @@ vẫn chạy đc mà â cac router khac nhu contact , vnsadmin co chay dau
         $this->clear_all_cache();
         $data = array();
+
+        $data['slide']=$this->load->widget('slide');
+
         $data['product_cate'] = $this->system_model->get_data('product_category',array('parent_id' => 0,'lang' => $this->language),
             array('sort'=>''),1,5
         );

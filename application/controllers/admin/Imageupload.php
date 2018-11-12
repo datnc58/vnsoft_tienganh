@@ -44,9 +44,9 @@ class Imageupload extends MY_Controller
     {
         $config['upload_path'] = './upload/img/banner/';
         $config['allowed_types'] = 'gif|jpg|png|JPG|PNG|GIF';
-        $config['max_size'] = '5000';
-        $config['max_width'] = '4000';
-        $config['max_height'] = '4000';
+        $config['max_size'] = '50000';
+        $config['max_width'] = '40000';
+        $config['max_height'] = '40000';
 
         $this->load->library('upload', $config);
 
